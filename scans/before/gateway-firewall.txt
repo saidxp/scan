@@ -1,0 +1,16 @@
+table ip nat {
+	chain postrouting {
+		type nat hook postrouting priority srcnat; policy accept;
+		oifname "enp0s3" masquerade
+	}
+}
+table inet filter {
+	chain forward {
+		type filter hook forward priority filter; policy drop;
+		ct state established,related accept
+		iifname { "enp0s8", "enp0s9" } oifname "enp0s3" accept
+		iifname "enp0s8" oifname "enp0s9" icmp type { echo-reply, echo-request } accept
+		iifname "enp0s9" oifname "enp0s8" icmp type { echo-reply, echo-request } accept
+		iifname "enp0s9" oifname "enp0s8" udp dport 514 accept
+	}
+}

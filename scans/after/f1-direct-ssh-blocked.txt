@@ -1,0 +1,41 @@
+=== F1 AFTER-FIX VERIFICATION ===
+Sun Nov 22 05:58:53 PM +00 2026
+
+### DIRECT SSH from host via Vagrant auto-forwards (expect DROP/timeout) ###
+--- client1 via 127.0.0.1:2200 ---
+Connection timed out during banner exchange
+Connection to 127.0.0.1 port 2200 timed out
+exit=255
+--- client2 via 127.0.0.1:2201 ---
+Connection timed out during banner exchange
+Connection to 127.0.0.1 port 2201 timed out
+exit=255
+--- loghost via 127.0.0.1:2202 ---
+Connection timed out during banner exchange
+Connection to 127.0.0.1 port 2202 timed out
+exit=255
+
+### ProxyJump THROUGH bastion (expect OK) ###
+--- client1 ---
+Warning: Permanently added '[127.0.0.1]:2022' (ED25519) to the list of known hosts.
+Warning: Permanently added '192.168.50.50' (ED25519) to the list of known hosts.
+PROXY_OK
+uid=1001(vagrant) gid=1001(vagrant) groups=1001(vagrant)
+exit=0
+--- client2 ---
+Warning: Permanently added '[127.0.0.1]:2022' (ED25519) to the list of known hosts.
+Warning: Permanently added '192.168.60.10' (ED25519) to the list of known hosts.
+PROXY_OK
+uid=1001(vagrant) gid=1001(vagrant) groups=1001(vagrant)
+exit=0
+
+--- dvwa (192.168.60.20) via bastion (expect OK) ---
+Warning: Permanently added '[127.0.0.1]:2022' (ED25519) to the list of known hosts.
+Warning: Permanently added '192.168.60.20' (ED25519) to the list of known hosts.
+PROXY_OK
+uid=1001(vagrant) gid=1001(vagrant) groups=1001(vagrant)
+
+### DVWA still reachable from subnet B after rebuild (baseline intact) ###
+Warning: Permanently added '[127.0.0.1]:2022' (ED25519) to the list of known hosts.
+Warning: Permanently added '192.168.60.10' (ED25519) to the list of known hosts.
+dvwa_http_code=200

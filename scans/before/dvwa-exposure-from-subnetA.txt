@@ -1,0 +1,20 @@
+=== F2/F3 BEFORE: is DVWA reachable from untrusted subnet A (client1)? ===
+Sun Nov 22 06:01:13 PM +00 2026
+
+--- client1 (subnet A 192.168.50.50) -> dvwa 192.168.60.20:80 (raw TCP test) ---
+Warning: Permanently added '[127.0.0.1]:2022' (ED25519) to the list of known hosts.
+Warning: Permanently added '192.168.50.50' (ED25519) to the list of known hosts.
+DVWA_TCP_BLOCKED_from_subnetA
+
+--- dvwa host nftables ruleset ---
+Warning: Permanently added '[127.0.0.1]:2022' (ED25519) to the list of known hosts.
+Warning: Permanently added '192.168.60.20' (ED25519) to the list of known hosts.
+table inet filter {
+	chain input {
+		type filter hook input priority filter; policy accept;
+		iifname "lo" accept
+		ct state established,related accept
+		tcp dport 22 ip saddr 192.168.60.1 accept
+		tcp dport 22 drop
+	}
+}

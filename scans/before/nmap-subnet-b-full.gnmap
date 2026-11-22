@@ -1,0 +1,6 @@
+# Nmap 7.95 scan initiated Sat Nov 21 17:43:09 2026 as: nmap -Pn -p- -sS -sV -O --reason -T4 -oA /vagrant/scans/before/nmap-subnet-b-full 192.168.60.1 192.168.60.20
+Host: 192.168.60.1 (192.168.60.1)	Status: Up
+Host: 192.168.60.1 (192.168.60.1)	Ports: 22/open/tcp//ssh//OpenSSH 10.0p2 Debian 7+deb13u4 (protocol 2.0)/, 53/open/tcp//domain//dnsmasq 2.91/	Ignored State: closed (65533)	Seq Index: 258	IP ID Seq: All zeros
+Host: 192.168.60.20 (192.168.60.20)	Status: Up
+Host: 192.168.60.20 (192.168.60.20)	Ports: 22/filtered/tcp//ssh///, 80/open/tcp//http//Apache httpd 2.4.69 ((Debian))/	Ignored State: closed (65533)	Seq Index: 260	IP ID Seq: All zeros
+# Nmap done at Sat Nov 21 17:43:45 2026 -- 2 IP addresses (2 hosts up) scanned in 36.19 seconds

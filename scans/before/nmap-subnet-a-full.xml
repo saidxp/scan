@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Sat Nov 21 18:32:02 2026 as: nmap -Pn -p- -sS -sV -O -&#45;reason -T4 -oA /vagrant/scans/before/nmap-subnet-a-full 192.168.50.1 192.168.50.50 -->
+<nmaprun scanner="nmap" args="nmap -Pn -p- -sS -sV -O -&#45;reason -T4 -oA /vagrant/scans/before/nmap-subnet-a-full 192.168.50.1 192.168.50.50" start="1795285922" startstr="Sat Nov 21 18:32:02 2026" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1795285922" endtime="1795285995"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.50.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="192.168.50.1" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65533">
+<extrareasons reason="reset" count="65533" proto="tcp" ports="1-21,23-52,54-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="OpenSSH" version="10.0p2 Debian 7+deb13u4" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:10.0p2</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service></port>
+<port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="domain" product="dnsmasq" version="2.91" method="probed" conf="10"><cpe>cpe:/a:thekelleys:dnsmasq:2.91</cpe></service></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="22"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="33786"/>
+<osmatch name="Linux 5.4 - 5.10" accuracy="97" line="72380">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+</osmatch>
+<osmatch name="OpenWrt 21.02 (Linux 5.4)" accuracy="97" line="72530">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:5.4</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 4.15 - 5.19" accuracy="97" line="70534">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:4</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+</osmatch>
+<osmatch name="MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3)" accuracy="96" line="91792">
+<osclass type="router" vendor="MikroTik" osfamily="RouterOS" osgen="7.X" accuracy="96"><cpe>cpe:/o:mikrotik:routeros:7</cpe></osclass>
+<osclass type="router" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="96"><cpe>cpe:/o:linux:linux_kernel:5.6.3</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 6.0" accuracy="95" line="72657">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="6.X" accuracy="95"><cpe>cpe:/o:linux:linux_kernel:6.0</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 4.10" accuracy="95" line="70242">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="95"><cpe>cpe:/o:linux:linux_kernel:4.10</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 4.19" accuracy="94" line="70644">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="94"><cpe>cpe:/o:linux:linux_kernel:4.19</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.0 - 5.14" accuracy="94" line="71713">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="94"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+</osmatch>
+<osmatch name="Android 5.0 - 6.0.1 (Linux 3.4)" accuracy="93" line="33785">
+<osclass type="phone" vendor="Google" osfamily="Android" osgen="5.X" accuracy="93"><cpe>cpe:/o:google:android:5</cpe></osclass>
+<osclass type="phone" vendor="Google" osfamily="Android" osgen="6.X" accuracy="93"><cpe>cpe:/o:google:android:6</cpe></osclass>
+<osclass type="phone" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:3.4</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.32" accuracy="93" line="58659">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:2.6.32</cpe></osclass>
+</osmatch>
+<osfingerprint fingerprint="OS:SCAN(V=7.95%E=4%D=11/21%OT=22%CT=1%CU=33786%PV=Y%DS=1%DC=I%G=Y%TM=6B01E3&#xa;OS:EB%P=x86_64-pc-linux-gnu)SEQ(SP=101%GCD=1%ISR=103%TI=Z%CI=Z%II=I%TS=21)S&#xa;OS:EQ(SP=106%GCD=1%ISR=107%TI=Z%CI=Z%II=I%TS=21)SEQ(SP=107%GCD=1%ISR=109%TI&#xa;OS:=Z%CI=Z%II=I%TS=22)SEQ(SP=FF%GCD=1%ISR=108%TI=Z%CI=Z%II=I%TS=22)SEQ(SP=F&#xa;OS:F%GCD=1%ISR=10B%TI=Z%CI=Z%II=I%TS=21)OPS(O1=M5B4ST11NW7%O2=M5B4ST11NW7%O&#xa;OS:3=M5B4NNT11NW7%O4=M5B4ST11NW7%O5=M5B4ST11NW7%O6=M5B4ST11)WIN(W1=FE88%W2=&#xa;OS:FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M5B4NNSN&#xa;OS:W7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%D&#xa;OS:F=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O&#xa;OS:=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W&#xa;OS:=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%R&#xa;OS:IPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
+</os>
+<uptime seconds="3" lastboot="Sat Nov 21 18:33:12 2026"/>
+<distance value="1"/>
+<tcpsequence index="255" difficulty="Good luck!" values="8D7FCEAF,4B99890E,8856E8AA,C98A0DD4,34C4A37B,7DB2450"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="other" values="FD5FCEF9,4312CD11,25A31140,7FB2288A,90B19BE5,AF024E71"/>
+<times srtt="2312" rttvar="1035" to="100000"/>
+</host>
+<host starttime="1795285922" endtime="1795285987"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.50.50" addrtype="ipv4"/>
+<hostnames>
+<hostname name="192.168.50.50" type="PTR"/>
+</hostnames>
+<ports><extraports state="filtered" count="65535">
+<extrareasons reason="no-response" count="65535" proto="tcp" ports="1-65535"/>
+</extraports>
+</ports>
+<os></os>
+<times srtt="3398" rttvar="4173" to="100000"/>
+</host>
+<runstats><finished time="1795285995" timestr="Sat Nov 21 18:33:15 2026" summary="Nmap done at Sat Nov 21 18:33:15 2026; 2 IP addresses (2 hosts up) scanned in 73.39 seconds" elapsed="73.39" exit="success"/><hosts up="2" down="0" total="2"/>
+</runstats>
+</nmaprun>

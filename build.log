@@ -1,0 +1,1098 @@
+Bringing machine 'gateway' up with 'virtualbox' provider...
+Bringing machine 'client1' up with 'virtualbox' provider...
+Bringing machine 'client2' up with 'virtualbox' provider...
+Bringing machine 'loghost' up with 'virtualbox' provider...
+==> gateway: Importing base box 'debian13-local'...
+[KProgress: 10%[KProgress: 30%[KProgress: 40%[KProgress: 90%[K==> gateway: Matching MAC address for NAT networking...
+==> gateway: Setting the name of the VM: remote-gateway
+==> gateway: Clearing any previously set network interfaces...
+==> gateway: Preparing network interfaces based on configuration...
+    gateway: Adapter 1: nat
+==> gateway: Forwarding ports...
+    gateway: 22 (guest) => 2022 (host) (adapter 1)
+    gateway: 22 (guest) => 2222 (host) (adapter 1)
+==> gateway: Running 'pre-boot' VM customizations...
+==> gateway: Booting VM...
+==> gateway: Waiting for machine to boot. This may take a few minutes...
+    gateway: SSH address: 127.0.0.1:2222
+    gateway: SSH username: vagrant
+    gateway: SSH auth method: private key
+    gateway: 
+    gateway: Vagrant insecure key detected. Vagrant will automatically replace
+    gateway: this with a newly generated keypair for better security.
+    gateway: 
+    gateway: Inserting generated public key within guest...
+    gateway: Removing insecure key from the guest if it's present...
+    gateway: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> gateway: Machine booted and ready!
+==> gateway: Checking for guest additions in VM...
+    gateway: The guest additions on this VM do not match the installed version of
+    gateway: VirtualBox! In most cases this is fine, but in rare cases it can
+    gateway: prevent things such as shared folders from working properly. If you see
+    gateway: shared folder errors, please make sure the guest additions within the
+    gateway: virtual machine match the version of VirtualBox you have installed on
+    gateway: your host and reload your VM.
+    gateway: 
+    gateway: Guest Additions Version: 6.0.0 r127566
+    gateway: VirtualBox Version: 7.1
+==> gateway: Mounting shared folders...
+    gateway: /home/saidxp/scan => /vagrant
+==> gateway: Running provisioner: shell...
+    gateway: Running: /tmp/vagrant-shell20261119-141374-k7emjq.sh
+    gateway: ==================================================
+    gateway:  Starting Main Debian Server Provisioning
+    gateway: ==================================================
+    gateway: ==================================================
+    gateway:  Linux Provisioning
+    gateway: ==================================================
+    gateway: === Stage 04: Installing Required Packages ===
+    gateway: Hit:1 http://deb.debian.org/debian trixie InRelease
+    gateway: Get:2 http://security.debian.org/debian-security trixie-security InRelease [43.4 kB]
+    gateway: Get:3 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+    gateway: Get:4 http://security.debian.org/debian-security trixie-security/main Sources [269 kB]
+    gateway: Get:5 http://deb.debian.org/debian trixie-updates/main Sources.diff/Index [8,361 B]
+    gateway: Get:6 http://deb.debian.org/debian trixie-updates/main amd64 Packages.diff/Index [8,361 B]
+    gateway: Get:7 http://deb.debian.org/debian trixie-updates/main Translation-en.diff/Index [7,239 B]
+    gateway: Get:8 http://deb.debian.org/debian trixie-updates/main Sources T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,363 B]
+    gateway: Get:9 http://deb.debian.org/debian trixie-updates/main amd64 Packages T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,053 B]
+    gateway: Get:8 http://deb.debian.org/debian trixie-updates/main Sources T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,363 B]
+    gateway: Get:9 http://deb.debian.org/debian trixie-updates/main amd64 Packages T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,053 B]
+    gateway: Get:10 http://deb.debian.org/debian trixie-updates/main Translation-en T-2026-10-30-1402.07-F-2026-10-22-2004.53.pdiff [935 B]
+    gateway: Get:10 http://deb.debian.org/debian trixie-updates/main Translation-en T-2026-10-30-1402.07-F-2026-10-22-2004.53.pdiff [935 B]
+    gateway: Get:11 http://security.debian.org/debian-security trixie-security/main amd64 Packages [306 kB]
+    gateway: Get:12 http://security.debian.org/debian-security trixie-security/main Translation-en [185 kB]
+    gateway: Fetched 878 kB in 2s (575 kB/s)
+    gateway: Reading package lists...
+    gateway: Reading package lists...
+    gateway: Building dependency tree...
+    gateway: Reading state information...
+    gateway: sudo is already the newest version (1.9.16p2-3+deb13u2).
+    gateway: openssh-server is already the newest version (1:10.0p1-7+deb13u4).
+    gateway: openssh-server set to manually installed.
+    gateway: lvm2 is already the newest version (2.03.31-2).
+    gateway: The following NEW packages will be installed:
+    gateway:   acl
+    gateway: 0 upgraded, 1 newly installed, 0 to remove and 16 not upgraded.
+    gateway: Need to get 64.4 kB of archives.
+    gateway: After this operation, 237 kB of additional disk space will be used.
+    gateway: Get:1 http://deb.debian.org/debian trixie/main amd64 acl amd64 2.3.2-2+b1 [64.4 kB]
+    gateway: Fetched 64.4 kB in 0s (254 kB/s)
+    gateway: Selecting previously unselected package acl.
+    gateway: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36568 files and directories currently installed.)
+    gateway: Preparing to unpack .../acl_2.3.2-2+b1_amd64.deb ...
+    gateway: Unpacking acl (2.3.2-2+b1) ...
+    gateway: Setting up acl (2.3.2-2+b1) ...
+    gateway: Processing triggers for man-db (2.13.1-1) ...
+    gateway: Package installation complete.
+    gateway: === Stage 05: Provisioning Systemd Monitoring Service ===
+    gateway: Installing monitoring script from /vagrant/systemd/myservice.sh to /usr/local/bin/myservice.sh...
+    gateway: Installing systemd unit from /vagrant/systemd/myservice.service to /etc/systemd/system/myservice.service...
+    gateway: Reloading systemd daemon...
+    gateway: Enabling and starting myservice.service...
+    gateway: Created symlink '/etc/systemd/system/multi-user.target.wants/myservice.service' → '/etc/systemd/system/myservice.service'.
+    gateway: Systemd service provisioning complete.
+    gateway: ==================================================
+    gateway:  Linux Provisioning Completed
+    gateway: ==================================================
+    gateway: ==================================================
+    gateway:  Login / Security Provisioning
+    gateway: ==================================================
+    gateway: === Stage 06: Provisioning Users ===
+    gateway: Creating user admin1...
+    gateway: Creating user developer1...
+    gateway: Creating user deploy1...
+    gateway: User provisioning complete.
+    gateway: === Stage 07: Provisioning Groups ===
+    gateway: Creating group admin...
+    gateway: Creating group developer...
+    gateway: Creating group deploy...
+    gateway: Creating group project...
+    gateway: Group provisioning complete.
+    gateway: === Stage 08: Provisioning Sudo Policies ===
+    gateway: /etc/sudoers: parsed OK
+    gateway: /etc/sudoers.d/README: parsed OK
+    gateway: /etc/sudoers.d/admin: parsed OK
+    gateway: /etc/sudoers.d/deploy: parsed OK
+    gateway: /etc/sudoers.d/developer: parsed OK
+    gateway: /etc/sudoers.d/vagrant: parsed OK
+    gateway: Sudo policy provisioning complete.
+    gateway: === Stage 09: Provisioning Password Aging ===
+    gateway: Setting max password age to 90 days for admin1...
+    gateway: Setting max password age to 90 days for developer1...
+    gateway: Setting max password age to 90 days for deploy1...
+    gateway: Password aging policy provisioning complete.
+    gateway: === Stage 10: Provisioning PAM / pam_faillock ===
+    gateway: PAM / faillock provisioning complete.
+    gateway: === Stage 11: Provisioning Shared Filesystem Structure ===
+    gateway: Shared directory structure created at /home/soubaaiss/01-talent.
+    gateway: === Stage 12: Provisioning Directory Ownership, Permissions, and Setgid ===
+    gateway: Permissions and setgid configured for /home/soubaaiss/01-talent.
+    gateway: === Stage 13: Provisioning ACLs and Default Inheritance ===
+    gateway: ACL configuration complete for /home/soubaaiss/01-talent.
+    gateway: === Stage 14: Provisioning Sticky-Bit Scratch Directory ===
+    gateway: Sticky-bit scratch directory configured at /home/soubaaiss/test/scratch (mode 1777).
+    gateway: === Stages 15 & 16: Provisioning SSH Configuration and Public Keys ===
+    gateway: Installing SSH public key for admin1...
+    gateway: Installing SSH public key for developer1...
+    gateway: Installing SSH public key for deploy1...
+    gateway: Validating SSH server configuration...
+    gateway: Reloading SSH service...
+    gateway: SSH provisioning complete.
+    gateway: ==================================================
+    gateway:  Login / Security Provisioning Completed
+    gateway: ==================================================
+    gateway: ==================================================
+    gateway:  All Provisioning Completed Successfully
+    gateway: ==================================================
+==> gateway: Running provisioner: shell...
+    gateway: Running: /tmp/vagrant-shell20261119-141374-rnu01d.sh
+    gateway: Hit:1 http://security.debian.org/debian-security trixie-security InRelease
+    gateway: Hit:2 http://deb.debian.org/debian trixie InRelease
+    gateway: Hit:3 http://deb.debian.org/debian trixie-updates InRelease
+    gateway: Reading package lists...
+    gateway: Reading package lists...
+    gateway: Building dependency tree...
+    gateway: Reading state information...
+    gateway: ifupdown is already the newest version (0.8.44+deb13u1).
+    gateway: 0 upgraded, 0 newly installed, 0 to remove and 16 not upgraded.
+    gateway: lo               UNKNOWN        127.0.0.1/8 ::1/128
+    gateway: enp0s3           UP             10.0.2.15/24 fd17:625c:f037:2:3571:81b2:f6be:2f6e/64 fe80::3082:2a8a:6747:9068/64
+    gateway: enp0s8           UP             192.168.50.1/24 fe80::a00:27ff:fef5:4430/64
+    gateway: enp0s9           UP             192.168.60.1/24 fe80::a00:27ff:fe73:5a1e/64
+    gateway: net.ipv4.ip_forward = 1
+    gateway: Hit:1 http://deb.debian.org/debian trixie InRelease
+    gateway: Hit:2 http://deb.debian.org/debian trixie-updates InRelease
+    gateway: Hit:3 http://security.debian.org/debian-security trixie-security InRelease
+    gateway: Reading package lists...
+    gateway: Reading package lists...
+    gateway: Building dependency tree...
+    gateway: Reading state information...
+    gateway: nftables is already the newest version (1.1.3-1).
+    gateway: 0 upgraded, 0 newly installed, 0 to remove and 16 not upgraded.
+    gateway: Created symlink '/etc/systemd/system/sysinit.target.wants/nftables.service' → '/usr/lib/systemd/system/nftables.service'.
+==> gateway: Running provisioner: shell...
+    gateway: Running: /tmp/vagrant-shell20261119-141374-d5v3gs.sh
+    gateway: Reading package lists...
+    gateway: Building dependency tree...
+    gateway: Reading state information...
+    gateway: The following additional packages will be installed:
+    gateway:   isc-dhcp-common policycoreutils selinux-utils
+    gateway: Suggested packages:
+    gateway:   polkitd isc-dhcp-server-ldap ieee-data
+    gateway: The following NEW packages will be installed:
+    gateway:   isc-dhcp-common isc-dhcp-server policycoreutils selinux-utils
+    gateway: 0 upgraded, 4 newly installed, 0 to remove and 16 not upgraded.
+    gateway: Need to get 1,832 kB of archives.
+    gateway: After this operation, 8,002 kB of additional disk space will be used.
+    gateway: Get:1 http://deb.debian.org/debian trixie/main amd64 isc-dhcp-common amd64 4.4.3-P1-8 [118 kB]
+    gateway: Get:2 http://deb.debian.org/debian trixie/main amd64 isc-dhcp-server amd64 4.4.3-P1-8 [1,480 kB]
+    gateway: Get:3 http://deb.debian.org/debian trixie/main amd64 selinux-utils amd64 3.8.1-1 [109 kB]
+    gateway: Get:4 http://deb.debian.org/debian trixie/main amd64 policycoreutils amd64 3.8.1-2 [125 kB]
+    gateway: Preconfiguring packages ...
+    gateway: Fetched 1,832 kB in 1s (3,568 kB/s)
+    gateway: Selecting previously unselected package isc-dhcp-common.
+    gateway: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36589 files and directories currently installed.)
+    gateway: Preparing to unpack .../isc-dhcp-common_4.4.3-P1-8_amd64.deb ...
+    gateway: Unpacking isc-dhcp-common (4.4.3-P1-8) ...
+    gateway: Selecting previously unselected package isc-dhcp-server.
+    gateway: Preparing to unpack .../isc-dhcp-server_4.4.3-P1-8_amd64.deb ...
+    gateway: Unpacking isc-dhcp-server (4.4.3-P1-8) ...
+    gateway: Selecting previously unselected package selinux-utils.
+    gateway: Preparing to unpack .../selinux-utils_3.8.1-1_amd64.deb ...
+    gateway: Unpacking selinux-utils (3.8.1-1) ...
+    gateway: Selecting previously unselected package policycoreutils.
+    gateway: Preparing to unpack .../policycoreutils_3.8.1-2_amd64.deb ...
+    gateway: Unpacking policycoreutils (3.8.1-2) ...
+    gateway: Setting up selinux-utils (3.8.1-1) ...
+    gateway: Setting up policycoreutils (3.8.1-2) ...
+    gateway: Setting up isc-dhcp-server (4.4.3-P1-8) ...
+    gateway: Generating /etc/default/isc-dhcp-server...
+    gateway: invoke-rc.d: policy-rc.d denied execution of start.
+    gateway: Setting up isc-dhcp-common (4.4.3-P1-8) ...
+    gateway: Processing triggers for man-db (2.13.1-1) ...
+    gateway: Internet Systems Consortium DHCP Server 4.4.3-P1
+    gateway: Copyright 2004-2022 Internet Systems Consortium.
+    gateway: All rights reserved.
+    gateway: For info, please visit https://www.isc.org/software/dhcp/
+    gateway: Config file: /etc/dhcp/dhcpd.conf
+    gateway: Database file: /var/lib/dhcp/dhcpd.leases
+    gateway: PID file: /var/run/dhcpd.pid
+    gateway: isc-dhcp-server.service is not a native service, redirecting to systemd-sysv-install.
+    gateway: Executing: /usr/lib/systemd/systemd-sysv-install enable isc-dhcp-server
+==> gateway: Running provisioner: shell...
+    gateway: Running: /tmp/vagrant-shell20261119-141374-g48fve.sh
+    gateway: Reading package lists...
+    gateway: Building dependency tree...
+    gateway: Reading state information...
+    gateway: The following additional packages will be installed:
+    gateway:   dns-root-data dnsmasq-base libnetfilter-conntrack3 libnfnetlink0
+    gateway: Suggested packages:
+    gateway:   resolvconf
+    gateway: The following NEW packages will be installed:
+    gateway:   dns-root-data dnsmasq dnsmasq-base libnetfilter-conntrack3 libnfnetlink0
+    gateway: 0 upgraded, 5 newly installed, 0 to remove and 16 not upgraded.
+    gateway: Need to get 639 kB of archives.
+    gateway: After this operation, 1,522 kB of additional disk space will be used.
+    gateway: Get:1 http://deb.debian.org/debian trixie/main amd64 libnfnetlink0 amd64 1.0.2-3 [14.4 kB]
+    gateway: Get:2 http://deb.debian.org/debian trixie/main amd64 libnetfilter-conntrack3 amd64 1.1.0-1 [42.1 kB]
+    gateway: Get:3 http://deb.debian.org/debian trixie/main amd64 dnsmasq-base amd64 2.91-1+deb13u2 [507 kB]
+    gateway: Get:4 http://deb.debian.org/debian trixie/main amd64 dnsmasq all 2.91-1+deb13u2 [69.8 kB]
+    gateway: Get:5 http://deb.debian.org/debian trixie/main amd64 dns-root-data all 2025080400~deb13u1 [5,948 B]
+    gateway: Fetched 639 kB in 0s (1,753 kB/s)
+    gateway: Selecting previously unselected package libnfnetlink0:amd64.
+    gateway: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36871 files and directories currently installed.)
+    gateway: Preparing to unpack .../libnfnetlink0_1.0.2-3_amd64.deb ...
+    gateway: Unpacking libnfnetlink0:amd64 (1.0.2-3) ...
+    gateway: Selecting previously unselected package libnetfilter-conntrack3:amd64.
+    gateway: Preparing to unpack .../libnetfilter-conntrack3_1.1.0-1_amd64.deb ...
+    gateway: Unpacking libnetfilter-conntrack3:amd64 (1.1.0-1) ...
+    gateway: Selecting previously unselected package dnsmasq-base.
+    gateway: Preparing to unpack .../dnsmasq-base_2.91-1+deb13u2_amd64.deb ...
+    gateway: Unpacking dnsmasq-base (2.91-1+deb13u2) ...
+    gateway: Selecting previously unselected package dnsmasq.
+    gateway: Preparing to unpack .../dnsmasq_2.91-1+deb13u2_all.deb ...
+    gateway: Unpacking dnsmasq (2.91-1+deb13u2) ...
+    gateway: Selecting previously unselected package dns-root-data.
+    gateway: Preparing to unpack .../dns-root-data_2025080400~deb13u1_all.deb ...
+    gateway: Unpacking dns-root-data (2025080400~deb13u1) ...
+    gateway: Setting up dns-root-data (2025080400~deb13u1) ...
+    gateway: Setting up libnfnetlink0:amd64 (1.0.2-3) ...
+    gateway: Setting up libnetfilter-conntrack3:amd64 (1.1.0-1) ...
+    gateway: Setting up dnsmasq-base (2.91-1+deb13u2) ...
+    gateway: Setting up dnsmasq (2.91-1+deb13u2) ...
+    gateway: Created symlink '/etc/systemd/system/multi-user.target.wants/dnsmasq.service' → '/usr/lib/systemd/system/dnsmasq.service'.
+    gateway: Processing triggers for libc-bin (2.41-12+deb13u4) ...
+    gateway: Processing triggers for man-db (2.13.1-1) ...
+    gateway: Processing triggers for dbus (1.16.2-2) ...
+    gateway: dnsmasq: syntax check OK.
+    gateway: Synchronizing state of dnsmasq.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+    gateway: Executing: /usr/lib/systemd/systemd-sysv-install enable dnsmasq
+==> gateway: Running provisioner: shell...
+    gateway: Running: /tmp/vagrant-shell20261119-141374-pxklbl.sh
+    gateway: Hit:1 http://deb.debian.org/debian trixie InRelease
+    gateway: Hit:2 http://deb.debian.org/debian trixie-updates InRelease
+    gateway: Hit:3 http://security.debian.org/debian-security trixie-security InRelease
+    gateway: Reading package lists...
+    gateway: Reading package lists...
+    gateway: Building dependency tree...
+    gateway: Reading state information...
+    gateway: The following additional packages will be installed:
+    gateway:   python3-autocommand python3-inflect python3-jaraco.context
+    gateway:   python3-jaraco.functools python3-jaraco.text python3-more-itertools
+    gateway:   python3-pkg-resources python3-pyasyncore python3-pyinotify
+    gateway:   python3-setuptools python3-systemd python3-typeguard
+    gateway:   python3-typing-extensions python3-zipp whois
+    gateway: Suggested packages:
+    gateway:   mailx system-log-daemon monit sqlite3 python-pyinotify-doc
+    gateway:   python-setuptools-doc
+    gateway: The following NEW packages will be installed:
+    gateway:   fail2ban python3-autocommand python3-inflect python3-jaraco.context
+    gateway:   python3-jaraco.functools python3-jaraco.text python3-more-itertools
+    gateway:   python3-pkg-resources python3-pyasyncore python3-pyinotify
+    gateway:   python3-setuptools python3-systemd python3-typeguard
+    gateway:   python3-typing-extensions python3-zipp whois
+    gateway: 0 upgraded, 16 newly installed, 0 to remove and 16 not upgraded.
+    gateway: Need to get 1,861 kB of archives.
+    gateway: After this operation, 9,106 kB of additional disk space will be used.
+    gateway: Get:1 http://deb.debian.org/debian trixie/main amd64 python3-systemd amd64 235-1+b6 [40.8 kB]
+    gateway: Get:2 http://deb.debian.org/debian trixie/main amd64 fail2ban all 1.1.0-8 [466 kB]
+    gateway: Get:3 http://deb.debian.org/debian trixie/main amd64 python3-autocommand all 2.2.2-3 [13.6 kB]
+    gateway: Get:4 http://deb.debian.org/debian trixie/main amd64 python3-more-itertools all 10.7.0-1 [67.4 kB]
+    gateway: Get:5 http://deb.debian.org/debian trixie/main amd64 python3-typing-extensions all 4.13.2-1 [90.5 kB]
+    gateway: Get:6 http://deb.debian.org/debian trixie/main amd64 python3-typeguard all 4.4.2-1 [37.3 kB]
+    gateway: Get:7 http://deb.debian.org/debian trixie/main amd64 python3-inflect all 7.3.1-2 [32.4 kB]
+    gateway: Get:8 http://deb.debian.org/debian trixie/main amd64 python3-jaraco.functools all 4.1.0-1 [12.0 kB]
+    gateway: Get:9 http://deb.debian.org/debian trixie/main amd64 python3-pkg-resources all 78.1.1-0.1 [224 kB]
+    gateway: Get:10 http://deb.debian.org/debian trixie/main amd64 python3-jaraco.text all 4.0.0-1 [11.4 kB]
+    gateway: Get:11 http://deb.debian.org/debian trixie/main amd64 python3-zipp all 3.21.0-1 [10.6 kB]
+    gateway: Get:12 http://deb.debian.org/debian trixie/main amd64 python3-setuptools all 78.1.1-0.1 [738 kB]
+    gateway: Get:13 http://deb.debian.org/debian trixie/main amd64 python3-jaraco.context all 6.0.1-1+deb13u1 [8,492 B]
+    gateway: Get:14 http://deb.debian.org/debian trixie/main amd64 python3-pyasyncore all 1.0.2-3 [10.1 kB]
+    gateway: Get:15 http://deb.debian.org/debian trixie/main amd64 python3-pyinotify all 0.9.6-5 [24.9 kB]
+    gateway: Get:16 http://deb.debian.org/debian trixie/main amd64 whois amd64 5.6.3 [72.4 kB]
+    gateway: Fetched 1,861 kB in 1s (3,297 kB/s)
+    gateway: Selecting previously unselected package python3-systemd.
+    gateway: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36958 files and directories currently installed.)
+    gateway: Preparing to unpack .../00-python3-systemd_235-1+b6_amd64.deb ...
+    gateway: Unpacking python3-systemd (235-1+b6) ...
+    gateway: Selecting previously unselected package fail2ban.
+    gateway: Preparing to unpack .../01-fail2ban_1.1.0-8_all.deb ...
+    gateway: Unpacking fail2ban (1.1.0-8) ...
+    gateway: Selecting previously unselected package python3-autocommand.
+    gateway: Preparing to unpack .../02-python3-autocommand_2.2.2-3_all.deb ...
+    gateway: Unpacking python3-autocommand (2.2.2-3) ...
+    gateway: Selecting previously unselected package python3-more-itertools.
+    gateway: Preparing to unpack .../03-python3-more-itertools_10.7.0-1_all.deb ...
+    gateway: Unpacking python3-more-itertools (10.7.0-1) ...
+    gateway: Selecting previously unselected package python3-typing-extensions.
+    gateway: Preparing to unpack .../04-python3-typing-extensions_4.13.2-1_all.deb ...
+    gateway: Unpacking python3-typing-extensions (4.13.2-1) ...
+    gateway: Selecting previously unselected package python3-typeguard.
+    gateway: Preparing to unpack .../05-python3-typeguard_4.4.2-1_all.deb ...
+    gateway: Unpacking python3-typeguard (4.4.2-1) ...
+    gateway: Selecting previously unselected package python3-inflect.
+    gateway: Preparing to unpack .../06-python3-inflect_7.3.1-2_all.deb ...
+    gateway: Unpacking python3-inflect (7.3.1-2) ...
+    gateway: Selecting previously unselected package python3-jaraco.functools.
+    gateway: Preparing to unpack .../07-python3-jaraco.functools_4.1.0-1_all.deb ...
+    gateway: Unpacking python3-jaraco.functools (4.1.0-1) ...
+    gateway: Selecting previously unselected package python3-pkg-resources.
+    gateway: Preparing to unpack .../08-python3-pkg-resources_78.1.1-0.1_all.deb ...
+    gateway: Unpacking python3-pkg-resources (78.1.1-0.1) ...
+    gateway: Selecting previously unselected package python3-jaraco.text.
+    gateway: Preparing to unpack .../09-python3-jaraco.text_4.0.0-1_all.deb ...
+    gateway: Unpacking python3-jaraco.text (4.0.0-1) ...
+    gateway: Selecting previously unselected package python3-zipp.
+    gateway: Preparing to unpack .../10-python3-zipp_3.21.0-1_all.deb ...
+    gateway: Unpacking python3-zipp (3.21.0-1) ...
+    gateway: Selecting previously unselected package python3-setuptools.
+    gateway: Preparing to unpack .../11-python3-setuptools_78.1.1-0.1_all.deb ...
+    gateway: Unpacking python3-setuptools (78.1.1-0.1) ...
+    gateway: Selecting previously unselected package python3-jaraco.context.
+    gateway: Preparing to unpack .../12-python3-jaraco.context_6.0.1-1+deb13u1_all.deb ...
+    gateway: Unpacking python3-jaraco.context (6.0.1-1+deb13u1) ...
+    gateway: Selecting previously unselected package python3-pyasyncore.
+    gateway: Preparing to unpack .../13-python3-pyasyncore_1.0.2-3_all.deb ...
+    gateway: Unpacking python3-pyasyncore (1.0.2-3) ...
+    gateway: Selecting previously unselected package python3-pyinotify.
+    gateway: Preparing to unpack .../14-python3-pyinotify_0.9.6-5_all.deb ...
+    gateway: Unpacking python3-pyinotify (0.9.6-5) ...
+    gateway: Selecting previously unselected package whois.
+    gateway: Preparing to unpack .../15-whois_5.6.3_amd64.deb ...
+    gateway: Unpacking whois (5.6.3) ...
+    gateway: Setting up python3-more-itertools (10.7.0-1) ...
+    gateway: Setting up python3-jaraco.functools (4.1.0-1) ...
+    gateway: Setting up whois (5.6.3) ...
+    gateway: Setting up python3-jaraco.context (6.0.1-1+deb13u1) ...
+    gateway: Setting up python3-zipp (3.21.0-1) ...
+    gateway: Setting up python3-autocommand (2.2.2-3) ...
+    gateway: Setting up python3-typing-extensions (4.13.2-1) ...
+    gateway: Setting up python3-pyasyncore (1.0.2-3) ...
+    gateway: Setting up python3-systemd (235-1+b6) ...
+    gateway: Setting up fail2ban (1.1.0-8) ...
+    gateway: Created symlink '/etc/systemd/system/multi-user.target.wants/fail2ban.service' → '/usr/lib/systemd/system/fail2ban.service'.
+    gateway: Setting up python3-pyinotify (0.9.6-5) ...
+    gateway: Setting up python3-typeguard (4.4.2-1) ...
+    gateway: Setting up python3-inflect (7.3.1-2) ...
+    gateway: Setting up python3-jaraco.text (4.0.0-1) ...
+    gateway: Setting up python3-pkg-resources (78.1.1-0.1) ...
+    gateway: Setting up python3-setuptools (78.1.1-0.1) ...
+    gateway: Processing triggers for man-db (2.13.1-1) ...
+    gateway: Synchronizing state of fail2ban.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+    gateway: Executing: /usr/lib/systemd/systemd-sysv-install enable fail2ban
+    gateway: Status for the jail: sshd
+    gateway: |- Filter
+    gateway: |  |- Currently failed:	0
+    gateway: |  |- Total failed:	0
+    gateway: |  `- Journal matches:	_SYSTEMD_UNIT=ssh.service + _COMM=sshd
+    gateway: `- Actions
+    gateway:    |- Currently banned:	0
+    gateway:    |- Total banned:	0
+    gateway:    `- Banned IP list:
+==> gateway: Running provisioner: shell...
+    gateway: Running: /tmp/vagrant-shell20261119-141374-f5htqq.sh
+    gateway: Hit:1 http://security.debian.org/debian-security trixie-security InRelease
+    gateway: Hit:2 http://deb.debian.org/debian trixie InRelease
+    gateway: Hit:3 http://deb.debian.org/debian trixie-updates InRelease
+    gateway: Reading package lists...
+    gateway: Reading package lists...
+    gateway: Building dependency tree...
+    gateway: Reading state information...
+    gateway: The following additional packages will be installed:
+    gateway:   libestr0 libfastjson4 liblognorm5
+    gateway: Suggested packages:
+    gateway:   rsyslog-doc rsyslog-mysql | rsyslog-pgsql rsyslog-mongodb
+    gateway:   rsyslog-elasticsearch rsyslog-kafka rsyslog-hiredis rsyslog-snmp
+    gateway:   rsyslog-kubernetes rsyslog-docker rsyslog-clickhouse rsyslog-openssl
+    gateway:   | rsyslog-gnutls rsyslog-gssapi rsyslog-relp
+    gateway: The following NEW packages will be installed:
+    gateway:   libestr0 libfastjson4 liblognorm5 rsyslog
+    gateway: 0 upgraded, 4 newly installed, 0 to remove and 16 not upgraded.
+    gateway: Need to get 863 kB of archives.
+    gateway: After this operation, 2,338 kB of additional disk space will be used.
+    gateway: Get:1 http://deb.debian.org/debian trixie/main amd64 libestr0 amd64 0.1.11-2 [9,048 B]
+    gateway: Get:2 http://deb.debian.org/debian trixie/main amd64 libfastjson4 amd64 1.2304.0-2 [28.9 kB]
+    gateway: Get:3 http://deb.debian.org/debian trixie/main amd64 liblognorm5 amd64 2.0.6-5 [66.5 kB]
+    gateway: Get:4 http://deb.debian.org/debian trixie/main amd64 rsyslog amd64 8.2504.0-1+deb13u2 [758 kB]
+    gateway: Fetched 863 kB in 1s (858 kB/s)
+    gateway: Selecting previously unselected package libestr0:amd64.
+    gateway: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 38198 files and directories currently installed.)
+    gateway: Preparing to unpack .../libestr0_0.1.11-2_amd64.deb ...
+    gateway: Unpacking libestr0:amd64 (0.1.11-2) ...
+    gateway: Selecting previously unselected package libfastjson4:amd64.
+    gateway: Preparing to unpack .../libfastjson4_1.2304.0-2_amd64.deb ...
+    gateway: Unpacking libfastjson4:amd64 (1.2304.0-2) ...
+    gateway: Selecting previously unselected package liblognorm5:amd64.
+    gateway: Preparing to unpack .../liblognorm5_2.0.6-5_amd64.deb ...
+    gateway: Unpacking liblognorm5:amd64 (2.0.6-5) ...
+    gateway: Selecting previously unselected package rsyslog.
+    gateway: Preparing to unpack .../rsyslog_8.2504.0-1+deb13u2_amd64.deb ...
+    gateway: Unpacking rsyslog (8.2504.0-1+deb13u2) ...
+    gateway: Setting up libestr0:amd64 (0.1.11-2) ...
+    gateway: Setting up libfastjson4:amd64 (1.2304.0-2) ...
+    gateway: Setting up liblognorm5:amd64 (2.0.6-5) ...
+    gateway: Setting up rsyslog (8.2504.0-1+deb13u2) ...
+    gateway: Created symlink '/etc/systemd/system/syslog.service' → '/usr/lib/systemd/system/rsyslog.service'.
+    gateway: Created symlink '/etc/systemd/system/multi-user.target.wants/rsyslog.service' → '/usr/lib/systemd/system/rsyslog.service'.
+    gateway: Processing triggers for libc-bin (2.41-12+deb13u4) ...
+    gateway: Processing triggers for man-db (2.13.1-1) ...
+==> client1: Importing base box 'debian13-local'...
+[KProgress: 20%[KProgress: 30%[KProgress: 40%[KProgress: 90%[K==> client1: Matching MAC address for NAT networking...
+==> client1: Setting the name of the VM: remote-client1
+==> client1: Fixed port collision for 22 => 2222. Now on port 2200.
+==> client1: Clearing any previously set network interfaces...
+==> client1: Preparing network interfaces based on configuration...
+    client1: Adapter 1: nat
+==> client1: Forwarding ports...
+    client1: 22 (guest) => 2200 (host) (adapter 1)
+==> client1: Running 'pre-boot' VM customizations...
+==> client1: Booting VM...
+==> client1: Waiting for machine to boot. This may take a few minutes...
+    client1: SSH address: 127.0.0.1:2200
+    client1: SSH username: vagrant
+    client1: SSH auth method: private key
+    client1: 
+    client1: Vagrant insecure key detected. Vagrant will automatically replace
+    client1: this with a newly generated keypair for better security.
+    client1: 
+    client1: Inserting generated public key within guest...
+    client1: Removing insecure key from the guest if it's present...
+    client1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> client1: Machine booted and ready!
+==> client1: Checking for guest additions in VM...
+    client1: The guest additions on this VM do not match the installed version of
+    client1: VirtualBox! In most cases this is fine, but in rare cases it can
+    client1: prevent things such as shared folders from working properly. If you see
+    client1: shared folder errors, please make sure the guest additions within the
+    client1: virtual machine match the version of VirtualBox you have installed on
+    client1: your host and reload your VM.
+    client1: 
+    client1: Guest Additions Version: 6.0.0 r127566
+    client1: VirtualBox Version: 7.1
+==> client1: Mounting shared folders...
+    client1: /home/saidxp/scan => /vagrant
+==> client1: Running provisioner: shell...
+    client1: Running: /tmp/vagrant-shell20261119-141374-fbeaid.sh
+    client1: ==================================================
+    client1:  Starting Main Debian Server Provisioning
+    client1: ==================================================
+    client1: ==================================================
+    client1:  Linux Provisioning
+    client1: ==================================================
+    client1: === Stage 04: Installing Required Packages ===
+    client1: Hit:1 http://deb.debian.org/debian trixie InRelease
+    client1: Get:2 http://security.debian.org/debian-security trixie-security InRelease [43.4 kB]
+    client1: Get:3 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+    client1: Get:4 http://security.debian.org/debian-security trixie-security/main Sources [269 kB]
+    client1: Get:5 http://deb.debian.org/debian trixie-updates/main Sources.diff/Index [8,361 B]
+    client1: Get:6 http://deb.debian.org/debian trixie-updates/main amd64 Packages.diff/Index [8,361 B]
+    client1: Get:7 http://deb.debian.org/debian trixie-updates/main Translation-en.diff/Index [7,239 B]
+    client1: Get:8 http://security.debian.org/debian-security trixie-security/main amd64 Packages [306 kB]
+    client1: Get:9 http://deb.debian.org/debian trixie-updates/main Sources T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,363 B]
+    client1: Get:10 http://deb.debian.org/debian trixie-updates/main amd64 Packages T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,053 B]
+    client1: Get:11 http://security.debian.org/debian-security trixie-security/main Translation-en [185 kB]
+    client1: Get:9 http://deb.debian.org/debian trixie-updates/main Sources T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,363 B]
+    client1: Get:10 http://deb.debian.org/debian trixie-updates/main amd64 Packages T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,053 B]
+    client1: Get:12 http://deb.debian.org/debian trixie-updates/main Translation-en T-2026-10-30-1402.07-F-2026-10-22-2004.53.pdiff [935 B]
+    client1: Get:12 http://deb.debian.org/debian trixie-updates/main Translation-en T-2026-10-30-1402.07-F-2026-10-22-2004.53.pdiff [935 B]
+    client1: Fetched 878 kB in 1s (911 kB/s)
+    client1: Reading package lists...
+    client1: Reading package lists...
+    client1: Building dependency tree...
+    client1: Reading state information...
+    client1: sudo is already the newest version (1.9.16p2-3+deb13u2).
+    client1: openssh-server is already the newest version (1:10.0p1-7+deb13u4).
+    client1: openssh-server set to manually installed.
+    client1: lvm2 is already the newest version (2.03.31-2).
+    client1: The following NEW packages will be installed:
+    client1:   acl
+    client1: 0 upgraded, 1 newly installed, 0 to remove and 16 not upgraded.
+    client1: Need to get 64.4 kB of archives.
+    client1: After this operation, 237 kB of additional disk space will be used.
+    client1: Get:1 http://deb.debian.org/debian trixie/main amd64 acl amd64 2.3.2-2+b1 [64.4 kB]
+    client1: Fetched 64.4 kB in 0s (396 kB/s)
+    client1: Selecting previously unselected package acl.
+    client1: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36568 files and directories currently installed.)
+    client1: Preparing to unpack .../acl_2.3.2-2+b1_amd64.deb ...
+    client1: Unpacking acl (2.3.2-2+b1) ...
+    client1: Setting up acl (2.3.2-2+b1) ...
+    client1: Processing triggers for man-db (2.13.1-1) ...
+    client1: Package installation complete.
+    client1: === Stage 05: Provisioning Systemd Monitoring Service ===
+    client1: Installing monitoring script from /vagrant/systemd/myservice.sh to /usr/local/bin/myservice.sh...
+    client1: Installing systemd unit from /vagrant/systemd/myservice.service to /etc/systemd/system/myservice.service...
+    client1: Reloading systemd daemon...
+    client1: Enabling and starting myservice.service...
+    client1: Created symlink '/etc/systemd/system/multi-user.target.wants/myservice.service' → '/etc/systemd/system/myservice.service'.
+    client1: Systemd service provisioning complete.
+    client1: ==================================================
+    client1:  Linux Provisioning Completed
+    client1: ==================================================
+    client1: ==================================================
+    client1:  Login / Security Provisioning
+    client1: ==================================================
+    client1: === Stage 06: Provisioning Users ===
+    client1: Creating user admin1...
+    client1: Creating user developer1...
+    client1: Creating user deploy1...
+    client1: User provisioning complete.
+    client1: === Stage 07: Provisioning Groups ===
+    client1: Creating group admin...
+    client1: Creating group developer...
+    client1: Creating group deploy...
+    client1: Creating group project...
+    client1: Group provisioning complete.
+    client1: === Stage 08: Provisioning Sudo Policies ===
+    client1: /etc/sudoers: parsed OK
+    client1: /etc/sudoers.d/README: parsed OK
+    client1: /etc/sudoers.d/admin: parsed OK
+    client1: /etc/sudoers.d/deploy: parsed OK
+    client1: /etc/sudoers.d/developer: parsed OK
+    client1: /etc/sudoers.d/vagrant: parsed OK
+    client1: Sudo policy provisioning complete.
+    client1: === Stage 09: Provisioning Password Aging ===
+    client1: Setting max password age to 90 days for admin1...
+    client1: Setting max password age to 90 days for developer1...
+    client1: Setting max password age to 90 days for deploy1...
+    client1: Password aging policy provisioning complete.
+    client1: === Stage 10: Provisioning PAM / pam_faillock ===
+    client1: PAM / faillock provisioning complete.
+    client1: === Stage 11: Provisioning Shared Filesystem Structure ===
+    client1: Shared directory structure created at /home/soubaaiss/01-talent.
+    client1: === Stage 12: Provisioning Directory Ownership, Permissions, and Setgid ===
+    client1: Permissions and setgid configured for /home/soubaaiss/01-talent.
+    client1: === Stage 13: Provisioning ACLs and Default Inheritance ===
+    client1: ACL configuration complete for /home/soubaaiss/01-talent.
+    client1: === Stage 14: Provisioning Sticky-Bit Scratch Directory ===
+    client1: Sticky-bit scratch directory configured at /home/soubaaiss/test/scratch (mode 1777).
+    client1: === Stages 15 & 16: Provisioning SSH Configuration and Public Keys ===
+    client1: Installing SSH public key for admin1...
+    client1: Installing SSH public key for developer1...
+    client1: Installing SSH public key for deploy1...
+    client1: Validating SSH server configuration...
+    client1: Reloading SSH service...
+    client1: SSH provisioning complete.
+    client1: ==================================================
+    client1:  Login / Security Provisioning Completed
+    client1: ==================================================
+    client1: ==================================================
+    client1:  All Provisioning Completed Successfully
+    client1: ==================================================
+==> client1: Running provisioner: shell...
+    client1: Running: /tmp/vagrant-shell20261119-141374-6bqwsm.sh
+    client1: dhcpcd-10.1.0 starting
+    client1: DUID 00:01:00:01:32:52:4d:51:08:00:27:62:a9:a5
+    client1: enp0s8: waiting for carrier
+    client1: enp0s8: carrier acquired
+    client1: enp0s8: IAID 27:aa:00:01
+    client1: enp0s8: adding address fe80::7ebb:3533:d4e3:a9aa
+    client1: enp0s8: soliciting a DHCP lease
+    client1: enp0s8: offered 192.168.50.50 from 192.168.50.1
+    client1: enp0s8: probing address 192.168.50.50/24
+    client1: enp0s8: soliciting an IPv6 router
+    client1: enp0s8: leased 192.168.50.50 for 600 seconds
+    client1: enp0s8: adding route to 192.168.50.0/24
+    client1: enp0s8: adding default route via 192.168.50.1
+    client1: lo               UNKNOWN        127.0.0.1/8 ::1/128
+    client1: enp0s3           UP             10.0.2.15/24 fd17:625c:f037:2:3571:81b2:f6be:2f6e/64 fe80::3082:2a8a:6747:9068/64
+    client1: enp0s8           UP             192.168.50.50/24 fe80::7ebb:3533:d4e3:a9aa/64
+    client1: default via 192.168.50.1 dev enp0s8
+    client1: default via 192.168.50.1 dev enp0s8 proto dhcp src 192.168.50.50 metric 1003
+    client1: 10.0.2.0/24 dev enp0s3 proto dhcp scope link src 10.0.2.15 metric 1002
+    client1: 192.168.50.0/24 dev enp0s8 proto dhcp scope link src 192.168.50.50 metric 1003
+==> client1: Running provisioner: shell...
+    client1: Running: /tmp/vagrant-shell20261119-141374-3scha5.sh
+    client1: Hit:1 http://security.debian.org/debian-security trixie-security InRelease
+    client1: Hit:2 http://deb.debian.org/debian trixie InRelease
+    client1: Hit:3 http://deb.debian.org/debian trixie-updates InRelease
+    client1: Reading package lists...
+    client1: Reading package lists...
+    client1: Building dependency tree...
+    client1: Reading state information...
+    client1: nftables is already the newest version (1.1.3-1).
+    client1: 0 upgraded, 0 newly installed, 0 to remove and 16 not upgraded.
+    client1: Created symlink '/etc/systemd/system/sysinit.target.wants/nftables.service' → '/usr/lib/systemd/system/nftables.service'.
+==> client1: Running provisioner: shell...
+    client1: Running: /tmp/vagrant-shell20261119-141374-klhwz.sh
+    client1: Hit:1 http://deb.debian.org/debian trixie InRelease
+    client1: Hit:2 http://security.debian.org/debian-security trixie-security InRelease
+    client1: Hit:3 http://deb.debian.org/debian trixie-updates InRelease
+    client1: Reading package lists...
+    client1: Reading package lists...
+    client1: Building dependency tree...
+    client1: Reading state information...
+    client1: The following additional packages will be installed:
+    client1:   libestr0 libfastjson4 liblognorm5
+    client1: Suggested packages:
+    client1:   rsyslog-doc rsyslog-mysql | rsyslog-pgsql rsyslog-mongodb
+    client1:   rsyslog-elasticsearch rsyslog-kafka rsyslog-hiredis rsyslog-snmp
+    client1:   rsyslog-kubernetes rsyslog-docker rsyslog-clickhouse rsyslog-openssl
+    client1:   | rsyslog-gnutls rsyslog-gssapi rsyslog-relp
+    client1: The following NEW packages will be installed:
+    client1:   libestr0 libfastjson4 liblognorm5 rsyslog
+    client1: 0 upgraded, 4 newly installed, 0 to remove and 16 not upgraded.
+    client1: Need to get 863 kB of archives.
+    client1: After this operation, 2,338 kB of additional disk space will be used.
+    client1: Get:1 http://deb.debian.org/debian trixie/main amd64 libestr0 amd64 0.1.11-2 [9,048 B]
+    client1: Get:2 http://deb.debian.org/debian trixie/main amd64 libfastjson4 amd64 1.2304.0-2 [28.9 kB]
+    client1: Get:3 http://deb.debian.org/debian trixie/main amd64 liblognorm5 amd64 2.0.6-5 [66.5 kB]
+    client1: Get:4 http://deb.debian.org/debian trixie/main amd64 rsyslog amd64 8.2504.0-1+deb13u2 [758 kB]
+    client1: Fetched 863 kB in 0s (2,217 kB/s)
+    client1: Selecting previously unselected package libestr0:amd64.
+    client1: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36589 files and directories currently installed.)
+    client1: Preparing to unpack .../libestr0_0.1.11-2_amd64.deb ...
+    client1: Unpacking libestr0:amd64 (0.1.11-2) ...
+    client1: Selecting previously unselected package libfastjson4:amd64.
+    client1: Preparing to unpack .../libfastjson4_1.2304.0-2_amd64.deb ...
+    client1: Unpacking libfastjson4:amd64 (1.2304.0-2) ...
+    client1: Selecting previously unselected package liblognorm5:amd64.
+    client1: Preparing to unpack .../liblognorm5_2.0.6-5_amd64.deb ...
+    client1: Unpacking liblognorm5:amd64 (2.0.6-5) ...
+    client1: Selecting previously unselected package rsyslog.
+    client1: Preparing to unpack .../rsyslog_8.2504.0-1+deb13u2_amd64.deb ...
+    client1: Unpacking rsyslog (8.2504.0-1+deb13u2) ...
+    client1: Setting up libestr0:amd64 (0.1.11-2) ...
+    client1: Setting up libfastjson4:amd64 (1.2304.0-2) ...
+    client1: Setting up liblognorm5:amd64 (2.0.6-5) ...
+    client1: Setting up rsyslog (8.2504.0-1+deb13u2) ...
+    client1: Created symlink '/etc/systemd/system/syslog.service' → '/usr/lib/systemd/system/rsyslog.service'.
+    client1: Created symlink '/etc/systemd/system/multi-user.target.wants/rsyslog.service' → '/usr/lib/systemd/system/rsyslog.service'.
+    client1: Processing triggers for libc-bin (2.41-12+deb13u4) ...
+    client1: Processing triggers for man-db (2.13.1-1) ...
+==> client1: Running provisioner: shell...
+    client1: Running: inline script
+    client1: rebooting to apply dhcpcd settings
+==> client1: Waiting for machine to reboot...
+==> client2: Importing base box 'debian13-local'...
+[KProgress: 10%[KProgress: 20%[KProgress: 30%[KProgress: 40%[KProgress: 90%[K==> client2: Matching MAC address for NAT networking...
+==> client2: Setting the name of the VM: remote-client2
+==> client2: Fixed port collision for 22 => 2222. Now on port 2201.
+==> client2: Clearing any previously set network interfaces...
+==> client2: Preparing network interfaces based on configuration...
+    client2: Adapter 1: nat
+==> client2: Forwarding ports...
+    client2: 22 (guest) => 2201 (host) (adapter 1)
+==> client2: Running 'pre-boot' VM customizations...
+==> client2: Booting VM...
+==> client2: Waiting for machine to boot. This may take a few minutes...
+    client2: SSH address: 127.0.0.1:2201
+    client2: SSH username: vagrant
+    client2: SSH auth method: private key
+    client2: 
+    client2: Vagrant insecure key detected. Vagrant will automatically replace
+    client2: this with a newly generated keypair for better security.
+    client2: Warning: Remote connection disconnect. Retrying...
+==> client2: Machine booted and ready!
+==> client2: Checking for guest additions in VM...
+    client2: The guest additions on this VM do not match the installed version of
+    client2: VirtualBox! In most cases this is fine, but in rare cases it can
+    client2: prevent things such as shared folders from working properly. If you see
+    client2: shared folder errors, please make sure the guest additions within the
+    client2: virtual machine match the version of VirtualBox you have installed on
+    client2: your host and reload your VM.
+    client2: 
+    client2: Guest Additions Version: 6.0.0 r127566
+    client2: VirtualBox Version: 7.1
+==> client2: Mounting shared folders...
+    client2: /home/saidxp/scan => /vagrant
+==> client2: Running provisioner: shell...
+    client2: Running: /tmp/vagrant-shell20261119-141374-u157ki.sh
+    client2: ==================================================
+    client2:  Starting Main Debian Server Provisioning
+    client2: ==================================================
+    client2: ==================================================
+    client2:  Linux Provisioning
+    client2: ==================================================
+    client2: === Stage 04: Installing Required Packages ===
+    client2: Hit:1 http://deb.debian.org/debian trixie InRelease
+    client2: Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+    client2: Get:3 http://deb.debian.org/debian trixie-updates/main Sources.diff/Index [8,361 B]
+    client2: Get:4 http://deb.debian.org/debian trixie-updates/main amd64 Packages.diff/Index [8,361 B]
+    client2: Get:5 http://deb.debian.org/debian trixie-updates/main Translation-en.diff/Index [7,239 B]
+    client2: Get:6 http://deb.debian.org/debian trixie-updates/main Sources T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,363 B]
+    client2: Get:7 http://deb.debian.org/debian trixie-updates/main amd64 Packages T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,053 B]
+    client2: Get:6 http://deb.debian.org/debian trixie-updates/main Sources T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,363 B]
+    client2: Get:7 http://deb.debian.org/debian trixie-updates/main amd64 Packages T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,053 B]
+    client2: Get:8 http://deb.debian.org/debian trixie-updates/main Translation-en T-2026-10-30-1402.07-F-2026-10-22-2004.53.pdiff [935 B]
+    client2: Get:8 http://deb.debian.org/debian trixie-updates/main Translation-en T-2026-10-30-1402.07-F-2026-10-22-2004.53.pdiff [935 B]
+    client2: Get:9 http://security.debian.org/debian-security trixie-security InRelease [43.4 kB]
+    client2: Get:10 http://security.debian.org/debian-security trixie-security/main Sources [269 kB]
+    client2: Get:11 http://security.debian.org/debian-security trixie-security/main amd64 Packages [306 kB]
+    client2: Get:12 http://security.debian.org/debian-security trixie-security/main Translation-en [185 kB]
+    client2: Fetched 878 kB in 6s (146 kB/s)
+    client2: Reading package lists...
+    client2: Reading package lists...
+    client2: Building dependency tree...
+    client2: Reading state information...
+    client2: sudo is already the newest version (1.9.16p2-3+deb13u2).
+    client2: openssh-server is already the newest version (1:10.0p1-7+deb13u4).
+    client2: openssh-server set to manually installed.
+    client2: lvm2 is already the newest version (2.03.31-2).
+    client2: The following NEW packages will be installed:
+    client2:   acl
+    client2: 0 upgraded, 1 newly installed, 0 to remove and 16 not upgraded.
+    client2: Need to get 64.4 kB of archives.
+    client2: After this operation, 237 kB of additional disk space will be used.
+    client2: Get:1 http://deb.debian.org/debian trixie/main amd64 acl amd64 2.3.2-2+b1 [64.4 kB]
+    client2: Fetched 64.4 kB in 0s (544 kB/s)
+    client2: Selecting previously unselected package acl.
+    client2: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36568 files and directories currently installed.)
+    client2: Preparing to unpack .../acl_2.3.2-2+b1_amd64.deb ...
+    client2: Unpacking acl (2.3.2-2+b1) ...
+    client2: Setting up acl (2.3.2-2+b1) ...
+    client2: Processing triggers for man-db (2.13.1-1) ...
+    client2: Package installation complete.
+    client2: === Stage 05: Provisioning Systemd Monitoring Service ===
+    client2: Installing monitoring script from /vagrant/systemd/myservice.sh to /usr/local/bin/myservice.sh...
+    client2: Installing systemd unit from /vagrant/systemd/myservice.service to /etc/systemd/system/myservice.service...
+    client2: Reloading systemd daemon...
+    client2: Enabling and starting myservice.service...
+    client2: Created symlink '/etc/systemd/system/multi-user.target.wants/myservice.service' → '/etc/systemd/system/myservice.service'.
+    client2: Systemd service provisioning complete.
+    client2: ==================================================
+    client2:  Linux Provisioning Completed
+    client2: ==================================================
+    client2: ==================================================
+    client2:  Login / Security Provisioning
+    client2: ==================================================
+    client2: === Stage 06: Provisioning Users ===
+    client2: Creating user admin1...
+    client2: Creating user developer1...
+    client2: Creating user deploy1...
+    client2: User provisioning complete.
+    client2: === Stage 07: Provisioning Groups ===
+    client2: Creating group admin...
+    client2: Creating group developer...
+    client2: Creating group deploy...
+    client2: Creating group project...
+    client2: Group provisioning complete.
+    client2: === Stage 08: Provisioning Sudo Policies ===
+    client2: /etc/sudoers: parsed OK
+    client2: /etc/sudoers.d/README: parsed OK
+    client2: /etc/sudoers.d/admin: parsed OK
+    client2: /etc/sudoers.d/deploy: parsed OK
+    client2: /etc/sudoers.d/developer: parsed OK
+    client2: /etc/sudoers.d/vagrant: parsed OK
+    client2: Sudo policy provisioning complete.
+    client2: === Stage 09: Provisioning Password Aging ===
+    client2: Setting max password age to 90 days for admin1...
+    client2: Setting max password age to 90 days for developer1...
+    client2: Setting max password age to 90 days for deploy1...
+    client2: Password aging policy provisioning complete.
+    client2: === Stage 10: Provisioning PAM / pam_faillock ===
+    client2: PAM / faillock provisioning complete.
+    client2: === Stage 11: Provisioning Shared Filesystem Structure ===
+    client2: Shared directory structure created at /home/soubaaiss/01-talent.
+    client2: === Stage 12: Provisioning Directory Ownership, Permissions, and Setgid ===
+    client2: Permissions and setgid configured for /home/soubaaiss/01-talent.
+    client2: === Stage 13: Provisioning ACLs and Default Inheritance ===
+    client2: ACL configuration complete for /home/soubaaiss/01-talent.
+    client2: === Stage 14: Provisioning Sticky-Bit Scratch Directory ===
+    client2: Sticky-bit scratch directory configured at /home/soubaaiss/test/scratch (mode 1777).
+    client2: === Stages 15 & 16: Provisioning SSH Configuration and Public Keys ===
+    client2: Installing SSH public key for admin1...
+    client2: Installing SSH public key for developer1...
+    client2: Installing SSH public key for deploy1...
+    client2: Validating SSH server configuration...
+    client2: Reloading SSH service...
+    client2: SSH provisioning complete.
+    client2: ==================================================
+    client2:  Login / Security Provisioning Completed
+    client2: ==================================================
+    client2: ==================================================
+    client2:  All Provisioning Completed Successfully
+    client2: ==================================================
+==> client2: Running provisioner: shell...
+    client2: Running: /tmp/vagrant-shell20261119-141374-df7g3i.sh
+    client2: default via 192.168.60.1 dev enp0s8
+    client2: 10.0.2.0/24 dev enp0s3 proto dhcp scope link src 10.0.2.15 metric 1002
+    client2: 192.168.60.0/24 dev enp0s8 proto kernel scope link src 192.168.60.10
+    client2: Reading package lists...
+    client2: Building dependency tree...
+    client2: Reading state information...
+    client2: The following additional packages will be installed:
+    client2:   bind9-host bind9-libs
+    client2: The following packages will be upgraded:
+    client2:   bind9-dnsutils bind9-host bind9-libs
+    client2: 3 upgraded, 0 newly installed, 0 to remove and 13 not upgraded.
+    client2: Need to get 1,474 kB of archives.
+    client2: After this operation, 8,192 B disk space will be freed.
+    client2: Get:1 http://security.debian.org/debian-security trixie-security/main amd64 bind9-dnsutils amd64 1:9.20.30-1~deb13u1 [167 kB]
+    client2: Get:2 http://security.debian.org/debian-security trixie-security/main amd64 bind9-host amd64 1:9.20.30-1~deb13u1 [56.6 kB]
+    client2: Get:3 http://security.debian.org/debian-security trixie-security/main amd64 bind9-libs amd64 1:9.20.30-1~deb13u1 [1,250 kB]
+    client2: apt-listchanges: Reading changelogs...
+    client2: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    client2: Fetched 1,474 kB in 2s (695 kB/s)
+    client2: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36589 files and directories currently installed.)
+    client2: Preparing to unpack .../bind9-dnsutils_1%3a9.20.30-1~deb13u1_amd64.deb ...
+    client2: Unpacking bind9-dnsutils (1:9.20.30-1~deb13u1) over (1:9.20.29-1~deb13u1) ...
+    client2: Preparing to unpack .../bind9-host_1%3a9.20.30-1~deb13u1_amd64.deb ...
+    client2: Unpacking bind9-host (1:9.20.30-1~deb13u1) over (1:9.20.29-1~deb13u1) ...
+    client2: Preparing to unpack .../bind9-libs_1%3a9.20.30-1~deb13u1_amd64.deb ...
+    client2: Unpacking bind9-libs:amd64 (1:9.20.30-1~deb13u1) over (1:9.20.29-1~deb13u1) ...
+    client2: Setting up bind9-libs:amd64 (1:9.20.30-1~deb13u1) ...
+    client2: Setting up bind9-host (1:9.20.30-1~deb13u1) ...
+    client2: Setting up bind9-dnsutils (1:9.20.30-1~deb13u1) ...
+    client2: Processing triggers for man-db (2.13.1-1) ...
+    client2: Processing triggers for libc-bin (2.41-12+deb13u4) ...
+==> client2: Running provisioner: shell...
+    client2: Running: /tmp/vagrant-shell20261119-141374-wwhblg.sh
+    client2: Hit:1 http://deb.debian.org/debian trixie InRelease
+    client2: Hit:2 http://deb.debian.org/debian trixie-updates InRelease
+    client2: Hit:3 http://security.debian.org/debian-security trixie-security InRelease
+    client2: Reading package lists...
+    client2: Reading package lists...
+    client2: Building dependency tree...
+    client2: Reading state information...
+    client2: nftables is already the newest version (1.1.3-1).
+    client2: 0 upgraded, 0 newly installed, 0 to remove and 13 not upgraded.
+    client2: Created symlink '/etc/systemd/system/sysinit.target.wants/nftables.service' → '/usr/lib/systemd/system/nftables.service'.
+==> client2: Running provisioner: shell...
+    client2: Running: /tmp/vagrant-shell20261119-141374-18xyzw.sh
+    client2: Hit:1 http://deb.debian.org/debian trixie InRelease
+    client2: Hit:2 http://deb.debian.org/debian trixie-updates InRelease
+    client2: Get:3 http://security.debian.org/debian-security trixie-security InRelease [43.4 kB]
+    client2: Fetched 43.4 kB in 0s (160 kB/s)
+    client2: Reading package lists...
+    client2: Reading package lists...
+    client2: Building dependency tree...
+    client2: Reading state information...
+    client2: The following additional packages will be installed:
+    client2:   libestr0 libfastjson4 liblognorm5
+    client2: Suggested packages:
+    client2:   rsyslog-doc rsyslog-mysql | rsyslog-pgsql rsyslog-mongodb
+    client2:   rsyslog-elasticsearch rsyslog-kafka rsyslog-hiredis rsyslog-snmp
+    client2:   rsyslog-kubernetes rsyslog-docker rsyslog-clickhouse rsyslog-openssl
+    client2:   | rsyslog-gnutls rsyslog-gssapi rsyslog-relp
+    client2: The following NEW packages will be installed:
+    client2:   libestr0 libfastjson4 liblognorm5 rsyslog
+    client2: 0 upgraded, 4 newly installed, 0 to remove and 13 not upgraded.
+    client2: Need to get 863 kB of archives.
+    client2: After this operation, 2,338 kB of additional disk space will be used.
+    client2: Get:1 http://deb.debian.org/debian trixie/main amd64 libestr0 amd64 0.1.11-2 [9,048 B]
+    client2: Get:2 http://deb.debian.org/debian trixie/main amd64 libfastjson4 amd64 1.2304.0-2 [28.9 kB]
+    client2: Get:3 http://deb.debian.org/debian trixie/main amd64 liblognorm5 amd64 2.0.6-5 [66.5 kB]
+    client2: Get:4 http://deb.debian.org/debian trixie/main amd64 rsyslog amd64 8.2504.0-1+deb13u2 [758 kB]
+    client2: Fetched 863 kB in 1s (830 kB/s)
+    client2: Selecting previously unselected package libestr0:amd64.
+    client2: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36589 files and directories currently installed.)
+    client2: Preparing to unpack .../libestr0_0.1.11-2_amd64.deb ...
+    client2: Unpacking libestr0:amd64 (0.1.11-2) ...
+    client2: Selecting previously unselected package libfastjson4:amd64.
+    client2: Preparing to unpack .../libfastjson4_1.2304.0-2_amd64.deb ...
+    client2: Unpacking libfastjson4:amd64 (1.2304.0-2) ...
+    client2: Selecting previously unselected package liblognorm5:amd64.
+    client2: Preparing to unpack .../liblognorm5_2.0.6-5_amd64.deb ...
+    client2: Unpacking liblognorm5:amd64 (2.0.6-5) ...
+    client2: Selecting previously unselected package rsyslog.
+    client2: Preparing to unpack .../rsyslog_8.2504.0-1+deb13u2_amd64.deb ...
+    client2: Unpacking rsyslog (8.2504.0-1+deb13u2) ...
+    client2: Setting up libestr0:amd64 (0.1.11-2) ...
+    client2: Setting up libfastjson4:amd64 (1.2304.0-2) ...
+    client2: Setting up liblognorm5:amd64 (2.0.6-5) ...
+    client2: Setting up rsyslog (8.2504.0-1+deb13u2) ...
+    client2: Created symlink '/etc/systemd/system/syslog.service' → '/usr/lib/systemd/system/rsyslog.service'.
+    client2: Created symlink '/etc/systemd/system/multi-user.target.wants/rsyslog.service' → '/usr/lib/systemd/system/rsyslog.service'.
+    client2: Processing triggers for libc-bin (2.41-12+deb13u4) ...
+    client2: Processing triggers for man-db (2.13.1-1) ...
+==> loghost: Importing base box 'debian13-local'...
+[KProgress: 10%[KProgress: 30%[KProgress: 40%[KProgress: 90%[K==> loghost: Matching MAC address for NAT networking...
+==> loghost: Setting the name of the VM: remote-loghost
+==> loghost: Fixed port collision for 22 => 2222. Now on port 2202.
+==> loghost: Clearing any previously set network interfaces...
+==> loghost: Preparing network interfaces based on configuration...
+    loghost: Adapter 1: nat
+==> loghost: Forwarding ports...
+    loghost: 22 (guest) => 2202 (host) (adapter 1)
+==> loghost: Running 'pre-boot' VM customizations...
+==> loghost: Booting VM...
+==> loghost: Waiting for machine to boot. This may take a few minutes...
+    loghost: SSH address: 127.0.0.1:2202
+    loghost: SSH username: vagrant
+    loghost: SSH auth method: private key
+    loghost: 
+    loghost: Vagrant insecure key detected. Vagrant will automatically replace
+    loghost: this with a newly generated keypair for better security.
+    loghost: 
+    loghost: Inserting generated public key within guest...
+    loghost: Removing insecure key from the guest if it's present...
+    loghost: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> loghost: Machine booted and ready!
+==> loghost: Checking for guest additions in VM...
+    loghost: The guest additions on this VM do not match the installed version of
+    loghost: VirtualBox! In most cases this is fine, but in rare cases it can
+    loghost: prevent things such as shared folders from working properly. If you see
+    loghost: shared folder errors, please make sure the guest additions within the
+    loghost: virtual machine match the version of VirtualBox you have installed on
+    loghost: your host and reload your VM.
+    loghost: 
+    loghost: Guest Additions Version: 6.0.0 r127566
+    loghost: VirtualBox Version: 7.1
+==> loghost: Mounting shared folders...
+    loghost: /home/saidxp/scan => /vagrant
+==> loghost: Running provisioner: shell...
+    loghost: Running: /tmp/vagrant-shell20261119-141374-vbwjra.sh
+    loghost: ==================================================
+    loghost:  Starting Main Debian Server Provisioning
+    loghost: ==================================================
+    loghost: ==================================================
+    loghost:  Linux Provisioning
+    loghost: ==================================================
+    loghost: === Stage 04: Installing Required Packages ===
+    loghost: Hit:1 http://deb.debian.org/debian trixie InRelease
+    loghost: Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+    loghost: Get:3 http://security.debian.org/debian-security trixie-security InRelease [43.4 kB]
+    loghost: Get:4 http://deb.debian.org/debian trixie-updates/main Sources.diff/Index [8,361 B]
+    loghost: Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages.diff/Index [8,361 B]
+    loghost: Get:6 http://deb.debian.org/debian trixie-updates/main Translation-en.diff/Index [7,239 B]
+    loghost: Get:7 http://security.debian.org/debian-security trixie-security/main Sources [269 kB]
+    loghost: Get:8 http://deb.debian.org/debian trixie-updates/main Sources T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,363 B]
+    loghost: Get:9 http://deb.debian.org/debian trixie-updates/main amd64 Packages T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,053 B]
+    loghost: Get:8 http://deb.debian.org/debian trixie-updates/main Sources T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,363 B]
+    loghost: Get:10 http://security.debian.org/debian-security trixie-security/main amd64 Packages [306 kB]
+    loghost: Get:9 http://deb.debian.org/debian trixie-updates/main amd64 Packages T-2026-11-05-1401.10-F-2026-10-22-2004.53.pdiff [1,053 B]
+    loghost: Get:11 http://deb.debian.org/debian trixie-updates/main Translation-en T-2026-10-30-1402.07-F-2026-10-22-2004.53.pdiff [935 B]
+    loghost: Get:12 http://security.debian.org/debian-security trixie-security/main Translation-en [185 kB]
+    loghost: Get:11 http://deb.debian.org/debian trixie-updates/main Translation-en T-2026-10-30-1402.07-F-2026-10-22-2004.53.pdiff [935 B]
+    loghost: Fetched 878 kB in 1s (831 kB/s)
+    loghost: Reading package lists...
+    loghost: Reading package lists...
+    loghost: Building dependency tree...
+    loghost: Reading state information...
+    loghost: sudo is already the newest version (1.9.16p2-3+deb13u2).
+    loghost: openssh-server is already the newest version (1:10.0p1-7+deb13u4).
+    loghost: openssh-server set to manually installed.
+    loghost: lvm2 is already the newest version (2.03.31-2).
+    loghost: The following NEW packages will be installed:
+    loghost:   acl
+    loghost: 0 upgraded, 1 newly installed, 0 to remove and 16 not upgraded.
+    loghost: Need to get 64.4 kB of archives.
+    loghost: After this operation, 237 kB of additional disk space will be used.
+    loghost: Get:1 http://deb.debian.org/debian trixie/main amd64 acl amd64 2.3.2-2+b1 [64.4 kB]
+    loghost: Fetched 64.4 kB in 0s (310 kB/s)
+    loghost: Selecting previously unselected package acl.
+    loghost: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36568 files and directories currently installed.)
+    loghost: Preparing to unpack .../acl_2.3.2-2+b1_amd64.deb ...
+    loghost: Unpacking acl (2.3.2-2+b1) ...
+    loghost: Setting up acl (2.3.2-2+b1) ...
+    loghost: Processing triggers for man-db (2.13.1-1) ...
+    loghost: Package installation complete.
+    loghost: === Stage 05: Provisioning Systemd Monitoring Service ===
+    loghost: Installing monitoring script from /vagrant/systemd/myservice.sh to /usr/local/bin/myservice.sh...
+    loghost: Installing systemd unit from /vagrant/systemd/myservice.service to /etc/systemd/system/myservice.service...
+    loghost: Reloading systemd daemon...
+    loghost: Enabling and starting myservice.service...
+    loghost: Created symlink '/etc/systemd/system/multi-user.target.wants/myservice.service' → '/etc/systemd/system/myservice.service'.
+    loghost: Systemd service provisioning complete.
+    loghost: ==================================================
+    loghost:  Linux Provisioning Completed
+    loghost: ==================================================
+    loghost: ==================================================
+    loghost:  Login / Security Provisioning
+    loghost: ==================================================
+    loghost: === Stage 06: Provisioning Users ===
+    loghost: Creating user admin1...
+    loghost: Creating user developer1...
+    loghost: Creating user deploy1...
+    loghost: User provisioning complete.
+    loghost: === Stage 07: Provisioning Groups ===
+    loghost: Creating group admin...
+    loghost: Creating group developer...
+    loghost: Creating group deploy...
+    loghost: Creating group project...
+    loghost: Group provisioning complete.
+    loghost: === Stage 08: Provisioning Sudo Policies ===
+    loghost: /etc/sudoers: parsed OK
+    loghost: /etc/sudoers.d/README: parsed OK
+    loghost: /etc/sudoers.d/admin: parsed OK
+    loghost: /etc/sudoers.d/deploy: parsed OK
+    loghost: /etc/sudoers.d/developer: parsed OK
+    loghost: /etc/sudoers.d/vagrant: parsed OK
+    loghost: Sudo policy provisioning complete.
+    loghost: === Stage 09: Provisioning Password Aging ===
+    loghost: Setting max password age to 90 days for admin1...
+    loghost: Setting max password age to 90 days for developer1...
+    loghost: Setting max password age to 90 days for deploy1...
+    loghost: Password aging policy provisioning complete.
+    loghost: === Stage 10: Provisioning PAM / pam_faillock ===
+    loghost: PAM / faillock provisioning complete.
+    loghost: === Stage 11: Provisioning Shared Filesystem Structure ===
+    loghost: Shared directory structure created at /home/soubaaiss/01-talent.
+    loghost: === Stage 12: Provisioning Directory Ownership, Permissions, and Setgid ===
+    loghost: Permissions and setgid configured for /home/soubaaiss/01-talent.
+    loghost: === Stage 13: Provisioning ACLs and Default Inheritance ===
+    loghost: ACL configuration complete for /home/soubaaiss/01-talent.
+    loghost: === Stage 14: Provisioning Sticky-Bit Scratch Directory ===
+    loghost: Sticky-bit scratch directory configured at /home/soubaaiss/test/scratch (mode 1777).
+    loghost: === Stages 15 & 16: Provisioning SSH Configuration and Public Keys ===
+    loghost: Installing SSH public key for admin1...
+    loghost: Installing SSH public key for developer1...
+    loghost: Installing SSH public key for deploy1...
+    loghost: Validating SSH server configuration...
+    loghost: Reloading SSH service...
+    loghost: SSH provisioning complete.
+    loghost: ==================================================
+    loghost:  Login / Security Provisioning Completed
+    loghost: ==================================================
+    loghost: ==================================================
+    loghost:  All Provisioning Completed Successfully
+    loghost: ==================================================
+==> loghost: Running provisioner: shell...
+    loghost: Running: /tmp/vagrant-shell20261119-141374-mf5yhr.sh
+    loghost: Hit:1 http://deb.debian.org/debian trixie InRelease
+    loghost: Hit:2 http://security.debian.org/debian-security trixie-security InRelease
+    loghost: Hit:3 http://deb.debian.org/debian trixie-updates InRelease
+    loghost: Reading package lists...
+    loghost: Reading package lists...
+    loghost: Building dependency tree...
+    loghost: Reading state information...
+    loghost: The following additional packages will be installed:
+    loghost:   libestr0 libfastjson4 liblognorm5
+    loghost: Suggested packages:
+    loghost:   rsyslog-doc rsyslog-mysql | rsyslog-pgsql rsyslog-mongodb
+    loghost:   rsyslog-elasticsearch rsyslog-kafka rsyslog-hiredis rsyslog-snmp
+    loghost:   rsyslog-kubernetes rsyslog-docker rsyslog-clickhouse rsyslog-openssl
+    loghost:   | rsyslog-gnutls rsyslog-gssapi rsyslog-relp
+    loghost: The following NEW packages will be installed:
+    loghost:   libestr0 libfastjson4 liblognorm5 rsyslog
+    loghost: 0 upgraded, 4 newly installed, 0 to remove and 16 not upgraded.
+    loghost: Need to get 863 kB of archives.
+    loghost: After this operation, 2,338 kB of additional disk space will be used.
+    loghost: Get:1 http://deb.debian.org/debian trixie/main amd64 libestr0 amd64 0.1.11-2 [9,048 B]
+    loghost: Get:2 http://deb.debian.org/debian trixie/main amd64 libfastjson4 amd64 1.2304.0-2 [28.9 kB]
+    loghost: Get:3 http://deb.debian.org/debian trixie/main amd64 liblognorm5 amd64 2.0.6-5 [66.5 kB]
+    loghost: Get:4 http://deb.debian.org/debian trixie/main amd64 rsyslog amd64 8.2504.0-1+deb13u2 [758 kB]
+    loghost: Fetched 863 kB in 1s (1,214 kB/s)
+    loghost: Selecting previously unselected package libestr0:amd64.
+    loghost: (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36589 files and directories currently installed.)
+    loghost: Preparing to unpack .../libestr0_0.1.11-2_amd64.deb ...
+    loghost: Unpacking libestr0:amd64 (0.1.11-2) ...
+    loghost: Selecting previously unselected package libfastjson4:amd64.
+    loghost: Preparing to unpack .../libfastjson4_1.2304.0-2_amd64.deb ...
+    loghost: Unpacking libfastjson4:amd64 (1.2304.0-2) ...
+    loghost: Selecting previously unselected package liblognorm5:amd64.
+    loghost: Preparing to unpack .../liblognorm5_2.0.6-5_amd64.deb ...
+    loghost: Unpacking liblognorm5:amd64 (2.0.6-5) ...
+    loghost: Selecting previously unselected package rsyslog.
+    loghost: Preparing to unpack .../rsyslog_8.2504.0-1+deb13u2_amd64.deb ...
+    loghost: Unpacking rsyslog (8.2504.0-1+deb13u2) ...
+    loghost: Setting up libestr0:amd64 (0.1.11-2) ...
+    loghost: Setting up libfastjson4:amd64 (1.2304.0-2) ...
+    loghost: Setting up liblognorm5:amd64 (2.0.6-5) ...
+    loghost: Setting up rsyslog (8.2504.0-1+deb13u2) ...
+    loghost: Created symlink '/etc/systemd/system/syslog.service' → '/usr/lib/systemd/system/rsyslog.service'.
+    loghost: Created symlink '/etc/systemd/system/multi-user.target.wants/rsyslog.service' → '/usr/lib/systemd/system/rsyslog.service'.
+    loghost: Processing triggers for libc-bin (2.41-12+deb13u4) ...
+    loghost: Processing triggers for man-db (2.13.1-1) ...
+==> loghost: Running provisioner: shell...
+    loghost: Running: /tmp/vagrant-shell20261119-141374-mislaf.sh
+    loghost: Hit:1 http://deb.debian.org/debian trixie InRelease
+    loghost: Hit:2 http://security.debian.org/debian-security trixie-security InRelease
+    loghost: Hit:3 http://deb.debian.org/debian trixie-updates InRelease
+    loghost: Reading package lists...
+    loghost: Reading package lists...
+    loghost: Building dependency tree...
+    loghost: Reading state information...
+    loghost: nftables is already the newest version (1.1.3-1).
+    loghost: 0 upgraded, 0 newly installed, 0 to remove and 16 not upgraded.
+    loghost: Created symlink '/etc/systemd/system/sysinit.target.wants/nftables.service' → '/usr/lib/systemd/system/nftables.service'.

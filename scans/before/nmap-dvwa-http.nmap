@@ -1,0 +1,31 @@
+# Nmap 7.95 scan initiated Sun Nov 22 13:21:48 2026 as: nmap -Pn -p80 -sV --script http-title,http-headers,http-methods,http-enum -oA /vagrant/scans/before/nmap-dvwa-http 192.168.60.20
+Nmap scan report for 192.168.60.20 (192.168.60.20)
+Host is up (0.00072s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.69 ((Debian))
+| http-title: Login :: Damn Vulnerable Web Application (DVWA)
+|_Requested resource was login.php
+| http-headers: 
+|   Date: Sun, 22 Nov 2026 13:21:56 GMT
+|   Server: Apache/2.4.69 (Debian)
+|   X-Powered-By: PHP/8.5.12
+|   Set-Cookie: security=low; path=/
+|   Set-Cookie: PHPSESSID=1e44726cea245c4bbdeea9ae81b1b418; expires=Mon, 23 Nov 2026 13:21:56 GMT; Max-Age=86400; path=/
+|   Expires: Tue, 23 Jun 2009 12:00:00 GMT
+|   Cache-Control: no-cache, must-revalidate
+|   Pragma: no-cache
+|   Connection: close
+|   Content-Type: text/html;charset=utf-8
+|   
+|_  (Request type: HEAD)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.69 (Debian)
+| http-enum: 
+|   /login.php: Possible admin folder
+|_  /robots.txt: Robots file
+MAC Address: 08:00:27:5E:2E:4A (PCS Systemtechnik/Oracle VirtualBox virtual NIC)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Nov 22 13:21:59 2026 -- 1 IP address (1 host up) scanned in 10.76 seconds

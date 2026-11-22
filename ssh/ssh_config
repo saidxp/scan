@@ -1,0 +1,39 @@
+# remote project - ProxyJump client config
+# Install into your local ~/.ssh/config so, from your laptop, "ssh client1"/"ssh client2"
+# hop THROUGH the bastion (the connect gateway). No manual -J.
+
+Host bastion
+    HostName 127.0.0.1
+    Port 2022
+    User vagrant
+    IdentityFile /home/saidxp/scan/.vagrant/machines/gateway/virtualbox/private_key
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+Host client1
+    HostName 192.168.50.50
+    User vagrant
+    ProxyJump bastion
+    IdentityFile /home/saidxp/scan/.vagrant/machines/client1/virtualbox/private_key
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+Host client2
+    HostName 192.168.60.10
+    User vagrant
+    ProxyJump bastion
+    IdentityFile /home/saidxp/scan/.vagrant/machines/client2/virtualbox/private_key
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    
+Host loghost
+    HostName 192.168.50.20
+    User vagrant
+    ProxyJump bastion
+    IdentityFile /home/saidxp/scan/.vagrant/machines/loghost/virtualbox/private_key
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null

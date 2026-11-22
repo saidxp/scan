@@ -1,0 +1,25 @@
+=== gateway ===
+The forwarded ports for the machine are listed below. Please note that
+these values may differ from values configured in the Vagrantfile if the
+provider supports automatic port collision detection and resolution.
+
+    22 (guest) => 2022 (host)
+    22 (guest) => 2222 (host)
+=== client1 ===
+The forwarded ports for the machine are listed below. Please note that
+these values may differ from values configured in the Vagrantfile if the
+provider supports automatic port collision detection and resolution.
+
+    22 (guest) => 2200 (host)
+=== client2 ===
+The forwarded ports for the machine are listed below. Please note that
+these values may differ from values configured in the Vagrantfile if the
+provider supports automatic port collision detection and resolution.
+
+    22 (guest) => 2201 (host)
+=== dvwa ===
+The forwarded ports for the machine are listed below. Please note that
+these values may differ from values configured in the Vagrantfile if the
+provider supports automatic port collision detection and resolution.
+
+    22 (guest) => 2202 (host)

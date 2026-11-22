@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Sat Nov 21 18:24:56 2026 as: nmap -sn -PE -&#45;reason -oA /vagrant/scans/before/nmap-subnet-a-discovery 192.168.50.0/24 -->
+<nmaprun scanner="nmap" args="nmap -sn -PE -&#45;reason -oA /vagrant/scans/before/nmap-subnet-a-discovery 192.168.50.0/24" start="1795285496" startstr="Sat Nov 21 18:24:56 2026" version="7.95" xmloutputversion="1.05">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="echo-reply" reason_ttl="64"/>
+<address addr="192.168.50.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="192.168.50.1" type="PTR"/>
+</hostnames>
+<times srtt="7079" rttvar="7079" to="100000"/>
+</host>
+<host><status state="up" reason="echo-reply" reason_ttl="63"/>
+<address addr="192.168.50.50" addrtype="ipv4"/>
+<hostnames>
+<hostname name="192.168.50.50" type="PTR"/>
+</hostnames>
+<times srtt="10854" rttvar="10854" to="100000"/>
+</host>
+<runstats><finished time="1795285497" timestr="Sat Nov 21 18:24:57 2026" summary="Nmap done at Sat Nov 21 18:24:57 2026; 256 IP addresses (2 hosts up) scanned in 1.77 seconds" elapsed="1.77" exit="success"/><hosts up="2" down="254" total="256"/>
+</runstats>
+</nmaprun>

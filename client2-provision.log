@@ -1,0 +1,118 @@
+==> client2: Running provisioner: shell...
+    client2: Running: /tmp/vagrant-shell20261121-138918-dkhy9o.sh
+    client2: ==================================================
+    client2:  Starting Main Debian Server Provisioning
+    client2: ==================================================
+    client2: ==================================================
+    client2:  Linux Provisioning
+    client2: ==================================================
+    client2: === Stage 04: Installing Required Packages ===
+    client2: Hit:1 http://deb.debian.org/debian trixie InRelease
+    client2: Hit:2 http://deb.debian.org/debian trixie-updates InRelease
+    client2: Hit:3 http://security.debian.org/debian-security trixie-security InRelease
+    client2: Reading package lists...
+    client2: Reading package lists...
+    client2: Building dependency tree...
+    client2: Reading state information...
+    client2: sudo is already the newest version (1.9.16p2-3+deb13u5).
+    client2: acl is already the newest version (2.3.2-2+b1).
+    client2: openssh-server is already the newest version (1:10.0p1-7+deb13u4).
+    client2: lvm2 is already the newest version (2.03.31-2).
+    client2: 0 upgraded, 0 newly installed, 0 to remove and 35 not upgraded.
+    client2: Package installation complete.
+    client2: === Stage 05: Provisioning Systemd Monitoring Service ===
+    client2: Installing monitoring script from /vagrant/systemd/myservice.sh to /usr/local/bin/myservice.sh...
+    client2: Installing systemd unit from /vagrant/systemd/myservice.service to /etc/systemd/system/myservice.service...
+    client2: Reloading systemd daemon...
+    client2: Enabling and starting myservice.service...
+    client2: Systemd service provisioning complete.
+    client2: ==================================================
+    client2:  Linux Provisioning Completed
+    client2: ==================================================
+    client2: ==================================================
+    client2:  Login / Security Provisioning
+    client2: ==================================================
+    client2: === Stage 06: Provisioning Users ===
+    client2: User admin1 already exists. Verifying shell and home...
+    client2: usermod: no changes
+    client2: User developer1 already exists. Verifying shell and home...
+    client2: usermod: no changes
+    client2: User deploy1 already exists. Verifying shell and home...
+    client2: usermod: no changes
+    client2: User provisioning complete.
+    client2: === Stage 07: Provisioning Groups ===
+    client2: Group admin already exists.
+    client2: Group developer already exists.
+    client2: Group deploy already exists.
+    client2: Group project already exists.
+    client2: Group provisioning complete.
+    client2: === Stage 08: Provisioning Sudo Policies ===
+    client2: /etc/sudoers: parsed OK
+    client2: /etc/sudoers.d/README: parsed OK
+    client2: /etc/sudoers.d/admin: parsed OK
+    client2: /etc/sudoers.d/deploy: parsed OK
+    client2: /etc/sudoers.d/developer: parsed OK
+    client2: /etc/sudoers.d/vagrant: parsed OK
+    client2: Sudo policy provisioning complete.
+    client2: === Stage 09: Provisioning Password Aging ===
+    client2: Setting max password age to 90 days for admin1...
+    client2: Setting max password age to 90 days for developer1...
+    client2: Setting max password age to 90 days for deploy1...
+    client2: Password aging policy provisioning complete.
+    client2: === Stage 10: Provisioning PAM / pam_faillock ===
+    client2: PAM / faillock provisioning complete.
+    client2: === Stage 11: Provisioning Shared Filesystem Structure ===
+    client2: Shared directory structure created at /home/soubaaiss/01-talent.
+    client2: === Stage 12: Provisioning Directory Ownership, Permissions, and Setgid ===
+    client2: Permissions and setgid configured for /home/soubaaiss/01-talent.
+    client2: === Stage 13: Provisioning ACLs and Default Inheritance ===
+    client2: ACL configuration complete for /home/soubaaiss/01-talent.
+    client2: === Stage 14: Provisioning Sticky-Bit Scratch Directory ===
+    client2: Sticky-bit scratch directory configured at /home/soubaaiss/test/scratch (mode 1777).
+    client2: === Stages 15 & 16: Provisioning SSH Configuration and Public Keys ===
+    client2: Installing SSH public key for admin1...
+    client2: Installing SSH public key for developer1...
+    client2: Installing SSH public key for deploy1...
+    client2: Validating SSH server configuration...
+    client2: Reloading SSH service...
+    client2: SSH provisioning complete.
+    client2: ==================================================
+    client2:  Login / Security Provisioning Completed
+    client2: ==================================================
+    client2: ==================================================
+    client2:  All Provisioning Completed Successfully
+    client2: ==================================================
+==> client2: Running provisioner: shell...
+    client2: Running: /tmp/vagrant-shell20261121-138918-crjpwe.sh
+    client2: default via 192.168.60.1 dev enp0s8 linkdown
+    client2: 10.0.2.0/24 dev enp0s3 proto dhcp scope link src 10.0.2.15 metric 1002
+    client2: 192.168.60.0/24 dev enp0s8 proto kernel scope link src 192.168.60.10 linkdown
+    client2: Reading package lists...
+    client2: Building dependency tree...
+    client2: Reading state information...
+    client2: bind9-dnsutils is already the newest version (1:9.20.30-1~deb13u1).
+    client2: arp-scan is already the newest version (1.10.0-2+b1).
+    client2: nmap is already the newest version (7.95+dfsg-3).
+    client2: 0 upgraded, 0 newly installed, 0 to remove and 35 not upgraded.
+==> client2: Running provisioner: shell...
+    client2: Running: /tmp/vagrant-shell20261121-138918-2teaaj.sh
+    client2: Hit:1 http://security.debian.org/debian-security trixie-security InRelease
+    client2: Hit:2 http://deb.debian.org/debian trixie InRelease
+    client2: Hit:3 http://deb.debian.org/debian trixie-updates InRelease
+    client2: Reading package lists...
+    client2: Reading package lists...
+    client2: Building dependency tree...
+    client2: Reading state information...
+    client2: nftables is already the newest version (1.1.3-1).
+    client2: 0 upgraded, 0 newly installed, 0 to remove and 35 not upgraded.
+==> client2: Running provisioner: shell...
+    client2: Running: /tmp/vagrant-shell20261121-138918-wlv4uh.sh
+    client2: Hit:1 http://deb.debian.org/debian trixie InRelease
+    client2: Hit:2 http://deb.debian.org/debian trixie-updates InRelease
+    client2: Hit:3 http://security.debian.org/debian-security trixie-security InRelease
+    client2: Reading package lists...
+    client2: Reading package lists...
+    client2: Building dependency tree...
+    client2: Reading state information...
+    client2: rsyslog is already the newest version (8.2504.0-1+deb13u2).
+    client2: 0 upgraded, 0 newly installed, 0 to remove and 35 not upgraded.

@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Sun Nov 22 13:21:48 2026 as: nmap -Pn -p80 -sV --script http-title,http-headers,http-methods,http-enum -oA /vagrant/scans/before/nmap-dvwa-http 192.168.60.20
+Host: 192.168.60.20 (192.168.60.20)	Status: Up
+Host: 192.168.60.20 (192.168.60.20)	Ports: 80/open/tcp//http//Apache httpd 2.4.69 ((Debian))/
+# Nmap done at Sun Nov 22 13:21:59 2026 -- 1 IP address (1 host up) scanned in 10.76 seconds

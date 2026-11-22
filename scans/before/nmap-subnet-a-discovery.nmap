@@ -1,0 +1,6 @@
+# Nmap 7.95 scan initiated Sat Nov 21 18:24:56 2026 as: nmap -sn -PE --reason -oA /vagrant/scans/before/nmap-subnet-a-discovery 192.168.50.0/24
+Nmap scan report for 192.168.50.1 (192.168.50.1)
+Host is up, received echo-reply ttl 64 (0.0071s latency).
+Nmap scan report for 192.168.50.50 (192.168.50.50)
+Host is up, received echo-reply ttl 63 (0.011s latency).
+# Nmap done at Sat Nov 21 18:24:57 2026 -- 256 IP addresses (2 hosts up) scanned in 1.77 seconds

@@ -1,0 +1,9 @@
+# Hardened SSH server configuration (deployed to EVERY host by provision/bastion.sh)
+# Key-based login only; no passwords.
+PubkeyAuthentication yes
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+# The root account must never log in over SSH.
+PermitRootLogin no
+# Log failed public-key attempts so fail2ban has lines to match (used on the bastion).
+LogLevel VERBOSE

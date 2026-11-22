@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Sun Nov 22 13:21:48 2026 as: nmap -Pn -p80 -sV -&#45;script http-title,http-headers,http-methods,http-enum -oA /vagrant/scans/before/nmap-dvwa-http 192.168.60.20 -->
+<nmaprun scanner="nmap" args="nmap -Pn -p80 -sV -&#45;script http-title,http-headers,http-methods,http-enum -oA /vagrant/scans/before/nmap-dvwa-http 192.168.60.20" start="1795353708" startstr="Sun Nov 22 13:21:48 2026" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="80"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.60.20" addrtype="ipv4"/>
+<address addr="08:00:27:5E:2E:4A" addrtype="mac" vendor="PCS Systemtechnik/Oracle VirtualBox virtual NIC"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1795353709" endtime="1795353719"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.60.20" addrtype="ipv4"/>
+<address addr="08:00:27:5E:2E:4A" addrtype="mac" vendor="PCS Systemtechnik/Oracle VirtualBox virtual NIC"/>
+<hostnames>
+<hostname name="192.168.60.20" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="Apache httpd" version="2.4.69" extrainfo="(Debian)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.69</cpe></service><script id="http-title" output="Login :: Damn Vulnerable Web Application (DVWA)&#xa;Requested resource was login.php"><elem key="title">Login :: Damn Vulnerable Web Application (DVWA)</elem>
+<elem key="redirect_url">login.php</elem>
+</script><script id="http-headers" output="&#xa;  Date: Sun, 22 Nov 2026 13:21:56 GMT&#xa;  Server: Apache/2.4.69 (Debian)&#xa;  X-Powered-By: PHP/8.5.12&#xa;  Set-Cookie: security=low; path=/&#xa;  Set-Cookie: PHPSESSID=1e44726cea245c4bbdeea9ae81b1b418; expires=Mon, 23 Nov 2026 13:21:56 GMT; Max-Age=86400; path=/&#xa;  Expires: Tue, 23 Jun 2009 12:00:00 GMT&#xa;  Cache-Control: no-cache, must-revalidate&#xa;  Pragma: no-cache&#xa;  Connection: close&#xa;  Content-Type: text/html;charset=utf-8&#xa;  &#xa;  (Request type: HEAD)&#xa;"/><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-server-header" output="Apache/2.4.69 (Debian)"><elem>Apache/2.4.69 (Debian)</elem>
+</script><script id="http-enum" output="&#xa;  /login.php: Possible admin folder&#xa;  /robots.txt: Robots file&#xa;"/></port>
+</ports>
+<times srtt="721" rttvar="3781" to="100000"/>
+</host>
+<runstats><finished time="1795353719" timestr="Sun Nov 22 13:21:59 2026" summary="Nmap done at Sun Nov 22 13:21:59 2026; 1 IP address (1 host up) scanned in 10.76 seconds" elapsed="10.76" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

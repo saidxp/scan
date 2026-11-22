@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Sun Nov 22 10:11:22 2026 as: nmap -Pn -sU -&#45;top-ports 100 -sV -&#45;reason -T4 -oA /vagrant/scans/before/nmap-gateway-udp 192.168.60.1 -->
+<nmaprun scanner="nmap" args="nmap -Pn -sU -&#45;top-ports 100 -sV -&#45;reason -T4 -oA /vagrant/scans/before/nmap-gateway-udp 192.168.60.1" start="1795342282" startstr="Sun Nov 22 10:11:22 2026" version="7.95" xmloutputversion="1.05">
+<scaninfo type="udp" protocol="udp" numservices="100" services="7,9,17,19,49,53,67-69,80,88,111,120,123,135-139,158,161-162,177,427,443,445,497,500,514-515,518,520,593,623,626,631,996-999,1022-1023,1025-1030,1433-1434,1645-1646,1701,1718-1719,1812-1813,1900,2000,2048-2049,2222-2223,3283,3456,3703,4444,4500,5000,5060,5353,5632,9200,10000,17185,20031,30718,31337,32768-32769,32771,32815,33281,49152-49154,49156,49181-49182,49185-49186,49188,49190-49194,49200-49201,65024"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.60.1" addrtype="ipv4"/>
+<address addr="08:00:27:73:5A:1E" addrtype="mac" vendor="PCS Systemtechnik/Oracle VirtualBox virtual NIC"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1795342284" endtime="1795352970"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.60.1" addrtype="ipv4"/>
+<address addr="08:00:27:73:5A:1E" addrtype="mac" vendor="PCS Systemtechnik/Oracle VirtualBox virtual NIC"/>
+<hostnames>
+<hostname name="192.168.60.1" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="80">
+<extrareasons reason="port-unreach" count="80" proto="udp" ports="9,17,19,49,68,88,111,120,123,135,137-138,158,161,177,427,443,445,497,500,514-515,518,593,623,626,631,996-999,1022-1023,1026-1027,1029-1030,1433-1434,1645-1646,1701,1718-1719,1812-1813,2000,2048-2049,2222-2223,3283,4444,4500,5353,10000,17185,20031,30718,31337,32768-32769,32771,32815,33281,49152-49153,49156,49181-49182,49185-49186,49188,49190-49194,49200-49201"/>
+</extraports>
+<port protocol="udp" portid="7"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="echo" method="table" conf="3"/></port>
+<port protocol="udp" portid="53"><state state="open" reason="udp-response" reason_ttl="64"/><service name="domain" product="dnsmasq" version="2.91" method="probed" conf="10"><cpe>cpe:/a:thekelleys:dnsmasq:2.91</cpe></service></port>
+<port protocol="udp" portid="67"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="dhcps" method="table" conf="3"/></port>
+<port protocol="udp" portid="69"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="tftp" method="table" conf="3"/></port>
+<port protocol="udp" portid="80"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="udp" portid="136"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="profile" method="table" conf="3"/></port>
+<port protocol="udp" portid="139"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="netbios-ssn" method="table" conf="3"/></port>
+<port protocol="udp" portid="162"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="snmptrap" method="table" conf="3"/></port>
+<port protocol="udp" portid="520"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="route" method="table" conf="3"/></port>
+<port protocol="udp" portid="1025"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="blackjack" method="table" conf="3"/></port>
+<port protocol="udp" portid="1028"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="ms-lsa" method="table" conf="3"/></port>
+<port protocol="udp" portid="1900"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="upnp" method="table" conf="3"/></port>
+<port protocol="udp" portid="3456"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="IISrpc-or-vat" method="table" conf="3"/></port>
+<port protocol="udp" portid="3703"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="adobeserver-3" method="table" conf="3"/></port>
+<port protocol="udp" portid="5000"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="upnp" method="table" conf="3"/></port>
+<port protocol="udp" portid="5060"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="sip" method="table" conf="3"/></port>
+<port protocol="udp" portid="5632"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="pcanywherestat" method="table" conf="3"/></port>
+<port protocol="udp" portid="9200"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="wap-wsp" method="table" conf="3"/></port>
+<port protocol="udp" portid="49154"><state state="open|filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="udp" portid="65024"><state state="open|filtered" reason="no-response" reason_ttl="0"/></port>
+</ports>
+<times srtt="2031" rttvar="854" to="100000"/>
+</host>
+<runstats><finished time="1795352970" timestr="Sun Nov 22 13:09:30 2026" summary="Nmap done at Sun Nov 22 13:09:30 2026; 1 IP address (1 host up) scanned in 10687.70 seconds" elapsed="10687.70" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
