@@ -1,0 +1,25 @@
+=== Host architecture check, before image choice ===
+date: 2026-11-22 20:13 UTC
+
+--- host CPU architecture ---
+$ uname -m
+x86_64
+
+$ uname -srm
+Linux 6.12.117+deb13-amd64 x86_64
+
+$ uname -a
+Linux saidxp 6.12.117+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.117-1 (2026-11-12) x86_64 GNU/Linux
+
+$ getconf LONG_BIT
+64
+
+--- virtualization layer ---
+$ VBoxManage --version
+7.1.18r173720
+
+--- conclusion ---
+Host is amd64 (x86_64), 64-bit. The guest box chosen is 'debian13-local'
+(Debian 13 'trixie'), which is the amd64 build, so host and guest match.
+Confirmed guest-side too: nmap OS fingerprints from the running VMs report
+P=x86_64-pc-linux-gnu (see nmap-subnet-b-full.nmap, nmap-subnet-a-full.nmap).
