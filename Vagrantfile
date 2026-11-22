@@ -116,6 +116,8 @@ Vagrant.configure("2") do |config|
     target.vm.provision "shell", path: "provision/provision.sh"
     target.vm.provision "shell", path: "provision/logging.sh", args: "client 192.168.50.20"
     target.vm.provision "shell", path: "provision/dvwa.sh", args: "application"
+    # F2 + F3 containment: box the un-patchable web app in with the firewall.
+    target.vm.provision "shell", path: "provision/dvwa.sh", args: "contain"
     # Last: closes direct SSH from the host NAT card, so the bastion is the only way in.
     target.vm.provision "shell", path: "provision/bastion.sh", args: "internal 192.168.60.1"
   end

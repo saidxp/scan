@@ -2,9 +2,17 @@
 set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive
 
-MODE="${1:?usage: dvwa.sh <network|application>}"
+MODE="${1:?usage: dvwa.sh <network|application|contain>}"
+
+# If a previous run already installed the containment table, drop it while we
+# (re)provision: package and image downloads still need to cross the gateway.
+lift_containment() {
+    nft delete table inet dvwa-contain 2>/dev/null || true
+}
 
 configure_network() {
+    lift_containment
+
     cat > /etc/network/interfaces <<'EOF'
 source /etc/network/interfaces.d/*
 
@@ -38,6 +46,8 @@ EOF
 }
 
 install_application() {
+    lift_containment
+
     # Fail unless downloads will cross the lab gateway rather than direct Vagrant NAT.
     ip route get 1.1.1.1 | grep -q 'via 192.168.60.1 dev enp0s8'
 
@@ -116,6 +126,50 @@ install_application() {
     curl --fail --silent http://192.168.60.20/login.php >/dev/null
 }
 
+# Containment for the deliberately vulnerable target (findings F2 + F3).
+# DVWA is a third-party image we cannot patch, so we box it in with the firewall
+# instead of fixing the application:
+#   IN  door: only the assessment host (192.168.60.10) may reach the web app.
+#   OUT door: neither the app host, its containers nor its subnet may leave the
+#             lab, so a blown-up RCE cannot call out to the internet.
+contain() {
+    # Rebuild the ruleset file each run so re-provisioning cannot stack duplicates.
+    sed -i '/# DVWA containment (F2 + F3) - start/,$d' /etc/nftables.conf
+
+    cat >> /etc/nftables.conf <<'EOF'
+
+# DVWA containment (F2 + F3) - start
+table inet dvwa-contain {
+  chain input {
+    type filter hook input priority -10; policy accept;
+    iifname "lo" accept
+    ct state established,related accept
+    tcp dport 80 ip saddr 192.168.60.10 accept
+    tcp dport 80 drop
+  }
+  chain output {
+    type filter hook output priority -10; policy accept;
+    oifname "lo" accept
+    ct state established,related accept
+    ip daddr { 127.0.0.0/8, 192.168.60.0/24, 10.0.2.0/24, 172.16.0.0/12 } accept
+    drop
+  }
+  chain forward {
+    type filter hook forward priority -10; policy accept;
+    iifname "br-*" ct state established,related accept
+    iifname "br-*" ip daddr { 192.168.60.0/24, 172.16.0.0/12 } accept
+    iifname "br-*" drop
+  }
+}
+# DVWA containment (F2 + F3) - end
+EOF
+
+    nft -c -f /etc/nftables.conf
+    systemctl enable nftables
+    systemctl restart nftables
+    nft list table inet dvwa-contain
+}
+
 case "$MODE" in
     network)
         configure_network
@@ -123,8 +177,11 @@ case "$MODE" in
     application)
         install_application
         ;;
+    contain)
+        contain
+        ;;
     *)
-        echo "usage: dvwa.sh <network|application>" >&2
+        echo "usage: dvwa.sh <network|application|contain>" >&2
         exit 2
         ;;
 esac

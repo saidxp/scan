@@ -1,0 +1,5 @@
+# Vagrant runtime state: machine IDs and PRIVATE SSH KEYS. Never commit.
+.vagrant/
+
+# Build / rebuild / provisioning logs (kept locally as evidence, not in git).
+*.log
