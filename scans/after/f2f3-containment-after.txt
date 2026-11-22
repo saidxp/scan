@@ -1,0 +1,79 @@
+### AFTER: clean rebuild (vagrant destroy -f && vagrant up) ###
+date: 2026-11-22 (UTC)
+
+Target : DVWA web app on 192.168.60.20 (subnet B)
+Fix    : containment applied from IaC by provision/dvwa.sh 'contain'
+         -> table inet dvwa-contain, run LAST on the dvwa VM (after bastion.sh)
+Test   : host -> bastion (ProxyJump) -> target
+
+--------------------------------------------------------------------------
+0. State after the clean rebuild (proves the fix survives destroy/up)
+--------------------------------------------------------------------------
+$ sudo nft list tables
+table inet filter
+table inet dvwa-contain
+
+$ sudo docker ps
+dvwa      Up
+dvwa-db   Up
+
+$ sudo nft list table inet dvwa-contain
+table inet dvwa-contain {
+	chain input {
+		type filter hook input priority filter - 10; policy accept;
+		iifname "lo" accept
+		ct state established,related accept
+		tcp dport 80 ip saddr 192.168.60.10 accept
+		tcp dport 80 drop
+	}
+	chain output {
+		type filter hook output priority filter - 10; policy accept;
+		oifname "lo" accept
+		ct state established,related accept
+		ip daddr { 10.0.2.0/24, 127.0.0.0/8, 172.16.0.0/12, 192.168.60.0/24 } accept
+		drop
+	}
+	chain forward {
+		type filter hook forward priority filter - 10; policy accept;
+		iifname "br-*" ct state established,related accept
+		iifname "br-*" ip daddr { 172.16.0.0/12, 192.168.60.0/24 } accept
+		iifname "br-*" drop
+	}
+}
+
+--------------------------------------------------------------------------
+F1  direct SSH from the host to the VM NAT SSH forwards  (expect: blocked)
+--------------------------------------------------------------------------
+$ for p in 2200 2201 2202 2203; do ssh -p $p ... vagrant@127.0.0.1 true; done
+port 2200 -> Connection to 127.0.0.1 port 2200 timed out
+port 2201 -> Connection to 127.0.0.1 port 2201 timed out
+port 2202 -> Connection to 127.0.0.1 port 2202 timed out
+port 2203 -> Connection to 127.0.0.1 port 2203 timed out
+
+client1 live ruleset (same shape on client2 / loghost / dvwa):
+$ sudo nft list ruleset
+table inet filter {
+	chain input {
+		type filter hook input priority filter; policy accept;
+		iifname "lo" accept
+		ct state established,related accept
+		tcp dport 22 ip saddr 192.168.50.1 accept
+		tcp dport 22 drop
+	}
+}
+
+--------------------------------------------------------------------------
+F2  reach to DVWA tcp/80  (expect: only 192.168.60.10 may connect)
+--------------------------------------------------------------------------
+client2 (192.168.60.10) -> DVWA : 302      (allowed - web app reachable)
+gateway (192.168.60.1)  -> DVWA : BLOCKED  (dropped by the input chain)
+
+--------------------------------------------------------------------------
+F3  egress from the DVWA host / its container  (expect: blocked)
+--------------------------------------------------------------------------
+dvwa host      -> http://1.1.1.1    : 000 / BLOCKED
+dvwa container -> tcp 1.1.1.1:80    : BLOCKED
+
+--------------------------------------------------------------------------
+Result: all three checks pass. Containment is reproducible from code.
+--------------------------------------------------------------------------
