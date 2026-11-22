@@ -46,6 +46,7 @@ the lab and the fixes.
 | [Vagrantfile](file:///home/saidxp/scan/Vagrantfile) | The whole environment as code (5 VMs, NICs, provisioning order). |
 | [provision/](file:///home/saidxp/scan/provision) | Provisioners, including the F1 fix and the DVWA containment. |
 | [report/assessment.md](file:///home/saidxp/scan/report/assessment.md) | The assessment: recon → findings → rating → remediation → verification. |
+| [report/walkthrough.md](file:///home/saidxp/scan/report/walkthrough.md) | End-to-end story: deploy → network → target → isolate → attack → defense. |
 | [remediation/notes.md](file:///home/saidxp/scan/remediation/notes.md) | Why each fix is what it is (contain, don't patch) and the ordering trap. |
 | [scans/before/](file:///home/saidxp/scan/scans/before) | Evidence: recon dumps and the "before" impact of each finding. |
 | [scans/after/](file:///home/saidxp/scan/scans/after) | Evidence: the same checks after a clean rebuild. |
